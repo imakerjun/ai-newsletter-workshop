@@ -1,0 +1,101 @@
+/* Notion-style Steps */
+.steps {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+  counter-reset: step-counter;
+}
+
+.step {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+  counter-increment: step-counter;
+  padding-bottom: 1.5rem;
+}
+
+/* 마지막 step은 아래 패딩 없음 */
+.step:last-child {
+  padding-bottom: 0;
+}
+
+/* 세로 연결선 */
+.step:not(:last-child) .number::after {
+  content: '';
+  position: absolute;
+  left: 11px; /* (24px 너비의 중앙) */
+  top: 28px;
+  bottom: 0;
+  width: 2px;
+  background: rgba(55, 53, 47, 0.09);
+}
+
+.number {
+  position: relative;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(55, 53, 47, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+/* CSS counter로 숫자 표시 */
+.number::before {
+  content: counter(step-counter);
+  font-size: 0.75em;
+  font-weight: 600;
+  color: rgba(55, 53, 47, 0.6);
+  line-height: 1;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  margin: 0 0 0.35em 0;
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.5;
+  color: rgb(55, 53, 47);
+}
+
+.body {
+  font-size: 0.9375em;
+  color: rgba(55, 53, 47, 0.65);
+  line-height: 1.6;
+}
+
+.body p {
+  margin: 0 0 0.5em 0;
+}
+
+.body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Dark mode */
+:global(.dark) .step:not(:last-child) .number::after {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+:global(.dark) .number {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+:global(.dark) .number::before {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+:global(.dark) .title {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+:global(.dark) .body {
+  color: rgba(255, 255, 255, 0.5);
+}

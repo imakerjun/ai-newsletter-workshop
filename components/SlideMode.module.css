@@ -1,0 +1,143 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+
+.preload {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.title {
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.counter {
+  position: absolute;
+  right: 24px;
+  bottom: 18px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+
+.navButton,
+.closeButton {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.18s ease, background 0.18s ease, transform 0.12s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+}
+
+.overlay:hover .navButton,
+.overlay:hover .closeButton {
+  opacity: 1;
+}
+
+.navButton {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  font-size: 32px;
+  line-height: 1;
+}
+
+.navButton:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.navButton:active:not(:disabled) {
+  transform: translateY(-50%) scale(0.96);
+}
+
+.navButton:disabled {
+  opacity: 0 !important;
+  cursor: default;
+}
+
+.navPrev {
+  left: 24px;
+}
+
+.navNext {
+  right: 24px;
+}
+
+.closeButton {
+  top: 18px;
+  right: 24px;
+  width: 36px;
+  height: 36px;
+  font-size: 16px;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+@media (max-width: 640px) {
+  .overlay {
+    padding: 16px;
+  }
+  .navPrev {
+    left: 8px;
+  }
+  .navNext {
+    right: 8px;
+  }
+  .navButton {
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+  }
+  .title {
+    top: 10px;
+    left: 12px;
+    font-size: 12px;
+  }
+  .counter {
+    right: 12px;
+    bottom: 10px;
+    font-size: 12px;
+  }
+}

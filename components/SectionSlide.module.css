@@ -1,0 +1,46 @@
+.figure {
+  margin: 1.5rem auto 1.75rem;
+  max-width: 800px;
+  border: 1px solid rgba(55, 53, 47, 0.09);
+  border-radius: 8px;
+  background: #f7f6f3;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  background: #000;
+}
+
+.caption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 8px;
+  font-size: 0.8125rem;
+  color: rgb(120, 119, 116);
+  line-height: 1.4;
+}
+
+.counter {
+  font-variant-numeric: tabular-nums;
+  color: rgb(55, 53, 47);
+  font-weight: 500;
+}
+
+.text {
+  color: rgb(120, 119, 116);
+}
+
+:global(.dark) .figure {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+:global(.dark) .counter {
+  color: rgba(255, 255, 255, 0.85);
+}

@@ -1,0 +1,129 @@
+/* Notion-style code block skin.
+ *
+ * Nextra 4의 <Pre>는 이미 copy 버튼·toggle wrap을 group-hover로 띄워주니까
+ * 여기서는 (1) 노션 톤의 배경/테두리/라운드, (2) 좌측 상단 언어 라벨,
+ * (3) hover 시 copy 버튼이 자연스럽게 드러나도록만 보강한다.
+ *
+ * !important: Nextra Pre는 Tailwind 4의 ring/bg 유틸을 직접 박아 두기 때문에
+ * 같은 명세도로는 못 이긴다. 의도적으로 덮어쓰는 토큰만 ! 표시. */
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+  margin: 0.5em auto 1.25em;
+}
+
+.wrapper :global(.nextra-code) {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* 좌측 상단 언어 라벨 — 작은 회색 모노스페이스.
+ * Notion: 코드 블록 좌측 상단에 작게 노출되는 언어 라벨과 동일한 위치/톤. */
+.label {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.875rem;
+  z-index: 1;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'PT Mono',
+    'Liberation Mono', Courier, monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: rgba(55, 53, 47, 0.5);
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  pointer-events: none;
+  user-select: none;
+}
+
+:global(.dark) .label {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* ===== Pre 본체 노션 스킨 ===== */
+
+/* Nextra Tailwind 클래스를 그대로 둔 채로 시각만 덮어쓴다.
+ * `:where()`로 명세도를 0으로 깎고, 필요한 속성에만 !important. */
+.wrapper :where(pre) {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 !important;
+  background: #f7f6f3 !important;
+  /* ring → 부드러운 단일 border로 변환 */
+  --tw-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
+  box-shadow: inset 0 0 0 1px rgba(55, 53, 47, 0.09) !important;
+  border-radius: 6px !important;
+  /* 라벨과 코드 첫 줄이 겹치지 않도록 상단 패딩 보강 */
+  padding-top: 2.25rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.wrapper[data-has-label] :where(pre) {
+  padding-top: 2.25rem !important;
+}
+
+:global(.dark) .wrapper :where(pre) {
+  background: rgba(255, 255, 255, 0.035) !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 긴 한 줄 프롬프트가 가로로 흘러넘치지 않고 자연스럽게 줄바꿈되도록.
+ * 기본 <pre>는 white-space: pre라 wrap이 안 일어남.
+ * pre-wrap으로 띄어쓰기 지점에서 wrap + overflow-wrap으로 URL 같은 긴 토큰도 안전하게 분할. */
+.wrapper :where(pre) :where(code) {
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  word-break: break-word !important;
+}
+
+/* Shiki가 code를 display:grid로 깔아 각 줄 span이 grid row가 된다.
+ * 줄 사이 \n 텍스트 노드는 grid에서 렌더되지 않으므로,
+ * 빈 줄(<span><span></span></span>)은 row 높이가 0으로 접힌다.
+ * zero-width space를 채워 빈 줄도 한 줄 높이를 갖게 한다 (Shiki 공식 해법). */
+.wrapper :where(pre) :where(code) > span > span:empty:only-child::before {
+  content: '\200b';
+}
+
+/* ===== Copy 버튼: Nextra 기본은 group-hover로만 보이고 흰 배경.
+ * 노션처럼 호버 시에만 부드럽게 등장하지만, 본 라이브 도큐는
+ * "복사해서 실행" 케이스가 많으니 항상 살짝 보이게(0.4) 두고,
+ * 호버 시 또렷이(1.0) 만든다. ===== */
+.wrapper :where(pre) > div:first-of-type {
+  opacity: 0.35 !important;
+  transition: opacity 0.15s !important;
+  top: 0.375rem !important;
+  right: 0.5rem !important;
+}
+
+.wrapper:hover :where(pre) > div:first-of-type,
+.wrapper :where(pre) > div:first-of-type:focus-within {
+  opacity: 1 !important;
+}
+
+.wrapper :where(pre) > div:first-of-type button {
+  background: rgba(255, 255, 255, 0.65) !important;
+  border: 1px solid rgba(55, 53, 47, 0.12) !important;
+  border-radius: 5px !important;
+  color: rgba(55, 53, 47, 0.7) !important;
+}
+
+.wrapper :where(pre) > div:first-of-type button:hover {
+  background: #fff !important;
+  color: rgba(55, 53, 47, 0.95) !important;
+}
+
+:global(.dark) .wrapper :where(pre) > div:first-of-type button {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+:global(.dark) .wrapper :where(pre) > div:first-of-type button:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  color: rgba(255, 255, 255, 0.95) !important;
+}

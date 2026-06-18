@@ -1,0 +1,513 @@
+/* ===== Folio + Notion-style Global Overrides for Nextra ===== */
+/* Base: Notion-style typography & spacing
+ * Layered: Folio (Claude Design) slate-blue accent + block tints */
+
+:root {
+  --font-sans: 'Pretendard Variable', 'Pretendard', -apple-system,
+    BlinkMacSystemFont, system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+
+  /* Nextra accent — slate blue (Folio --fl-accent) instead of gray */
+  --nextra-primary-hue: 222deg;
+  --nextra-primary-saturation: 88%;
+  --nextra-primary-lightness: 60%;
+
+  /* Folio tokens — slate-blue accent family */
+  --fl-accent-50: #ecf2ff;
+  --fl-accent-100: #d9e3ff;
+  --fl-accent-200: #b3c5ff;
+  --fl-accent: #3d6ff2;
+  --fl-accent-600: #2d5bd9;
+  --fl-accent-700: #1f47b3;
+
+  /* Folio block tints (light) — for callouts/highlights */
+  --fl-tint-blue-bg: #dee9fb;
+  --fl-tint-green-bg: #dcf0e3;
+  --fl-tint-yellow-bg: #faf0ce;
+  --fl-tint-red-bg: #fbdcd9;
+  --fl-tint-purple-bg: #e7dffa;
+
+  --doc-reading-width: 800px;
+}
+
+.dark {
+  --nextra-primary-hue: 222deg;
+  --nextra-primary-saturation: 88%;
+  --nextra-primary-lightness: 70%;
+
+  /* Folio dark accent */
+  --fl-accent: #6a8cff;
+  --fl-accent-600: #8aa9ff;
+
+  /* Folio block tints (dark) */
+  --fl-tint-blue-bg: rgba(138, 169, 255, 0.16);
+  --fl-tint-green-bg: rgba(127, 207, 163, 0.14);
+  --fl-tint-yellow-bg: rgba(232, 197, 99, 0.14);
+  --fl-tint-red-bg: rgba(232, 138, 133, 0.14);
+  --fl-tint-purple-bg: rgba(179, 155, 245, 0.16);
+}
+
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 본문 - 노션 실제 행간에 근접 (한국어 가독성 최적화)
+ * 색은 노션과 동일한 #37352F (순흑은 halation 유발 → 의도적으로 회피).
+ * Pretendard Variable은 weight 400에서 한글 줄기가 가늘게 보이므로
+ * 노션의 시스템 폰트 시각 무게에 맞춰 430으로 올린다.
+ * 한글 본문에서 음수 letter-spacing은 글자 두께 인식을 깎으므로 0. */
+article {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgb(55, 53, 47);
+  font-weight: 430;
+  letter-spacing: 0;
+}
+
+/* 한국어 본문은 subpixel-antialiased가 줄기를 살짝 더 굵게 그려준다.
+ * (Mac antialiased = 회색 보간 → 더 얇음. subpixel = RGB 보간 → 또렷함) */
+article {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+
+/* 본문 흐름 요소 max-width + 가운데 정렬.
+ *
+ * 800px = 16px 폰트 기준 한국어 약 50자/줄.
+ *   - 한국어 가독성 권장 30-50자 줄당 → 50자는 권장 상단(편안한 범위 유지)
+ *   - 영문 기준 80-90자 줄당 → 영문 권장 상단 내
+ *   - docs 페이지에서 article-TOC 사이 빈 공간을 줄여 시각 균형 회복
+ * Toss tech blog, Naver D2 등 한국 docs 사이트의 본문 폭과 같은 영역.
+ *
+ * ⚠️ max-width와 margin-inline: auto는 항상 짝.
+ * margin-inline: auto가 빠지면 블록이 좁아진 채 부모 왼쪽에 달라붙어
+ * Hero(text-align: center, 풀폭) 아래 컨텐츠가 좌측으로 쏠려 보인다.
+ *
+ * Hero(Hero_hero__*)는 의도적으로 제외해서 풀폭 사용.
+ * Nextra 4 구조: article > main > * */
+article main > :where(p, h1, h2, h3, h4, h5, h6, ul, ol, blockquote, table, pre, hr),
+article main > div[class*="callout"],
+article main > div[class*="steps"],
+article main > div[class*="timeline"],
+article main > div[class*="toggle"],
+article main > div[class*="placeholder"],
+article main > div[class*="Card_grid"],
+article main > div[class*="Card_card"],
+article main > div[class*="nextra-code"],
+article main > a[class*="link"] {
+  max-width: var(--doc-reading-width);
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+/* Nextra의 breadcrumb, copy page, last-updated, pagination은 main 밖에
+ * 렌더링된다. 본문만 좁히면 이 페이지 크롬들이 좌우로 벌어져 보이므로
+ * 같은 reading column에 맞춘다. */
+article > .nextra-breadcrumb,
+article > div[class*="text-end"],
+article > div[class*="border-t"][class*="items-center"] {
+  max-width: var(--doc-reading-width);
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+/* CopyPage는 Nextra 기본값이 float-end라 max-width가 직접 먹지 않는다.
+ * float는 유지하고 오른쪽 여백만 reading column의 gutter만큼 당긴다. */
+article > div[class*="float-end"] {
+  margin-inline-end: max(0px, calc((100% - var(--doc-reading-width)) / 2)) !important;
+}
+
+.dark article {
+  color: rgba(255, 255, 255, 0.81);
+}
+
+/* 제목 - 노션 스타일 굵은 제목, 넉넉한 간격 */
+article h1 {
+  font-size: 2.25em;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.25em;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+article h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+  line-height: 1.3;
+  /* 헤딩 내 인라인 일러스트와 정렬용. gap 대신 img margin으로 간격을 줘서
+   * 제목 텍스트와 Nextra `#` 앵커 사이가 벌어지지 않게 한다 (gap은 모든 flex
+   * 형제 사이에 적용되므로 텍스트↔앵커 간격까지 밀어낸다). */
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* 헤딩 안에 들어간 인라인 일러스트 (e.g. `## ![](/illustrations/...) 제목`) */
+article h2 img {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  margin: 0 0.65em 0 0;
+  border: none;
+  border-radius: 0;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+}
+
+article h2 a img {
+  display: block;
+}
+
+.dark article h2 {
+  border-bottom-color: rgba(255, 255, 255, 0.09);
+}
+
+article h3 {
+  font-size: 1.25em;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.4em;
+  line-height: 1.3;
+}
+
+/* 단락 간격 - Notion 기본 단락 간격 */
+article p {
+  margin-bottom: 0.85em;
+}
+
+/* 한국어 친화 줄바꿈 — 가운뎃점(`·`)으로 이어진 토큰이나 띄어쓰기 없는
+ * 한국어 어절 중간에서 끊기는 현상 방지. word-break: keep-all이 한국어를
+ * 단어 단위로 끊고, overflow-wrap: break-word는 영문 긴 토큰(URL·경로)의
+ * 오버플로우만 막아준다. */
+article p,
+article li,
+article blockquote {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 구분선 - 노션 스타일 얇은 선 */
+article hr {
+  border: none;
+  border-top: 1px solid rgba(55, 53, 47, 0.09);
+  margin: 2rem 0;
+}
+
+.dark article hr {
+  border-top-color: rgba(255, 255, 255, 0.09);
+}
+
+/* 링크 - Folio 슬레이트 블루 액센트 */
+article a {
+  color: var(--fl-accent-600);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--fl-accent) 35%, transparent);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.15s, color 0.15s;
+}
+
+article a:hover {
+  color: var(--fl-accent);
+  text-decoration-color: var(--fl-accent);
+}
+
+.dark article a {
+  color: var(--fl-accent-600);
+  text-decoration-color: color-mix(in srgb, var(--fl-accent) 45%, transparent);
+}
+
+.dark article a:hover {
+  color: var(--fl-accent);
+  text-decoration-color: var(--fl-accent);
+}
+
+/* 인라인 코드 - 노션 스타일 연한 빨강 배경 */
+article :not(pre) > code {
+  background: rgba(135, 131, 120, 0.15);
+  color: #eb5757;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+  font-family: 'SFMono-Regular', Menlo, Consolas, 'PT Mono', 'Liberation Mono',
+    Courier, monospace;
+}
+
+.dark article :not(pre) > code {
+  background: rgba(135, 131, 120, 0.3);
+  color: #ff7b72;
+}
+
+/* 리스트 - 노션 스타일 간격 */
+article ul,
+article ol {
+  padding-left: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+article li {
+  margin-bottom: 0.25em;
+  line-height: 1.55;
+}
+
+article li::marker {
+  color: rgba(55, 53, 47, 0.5);
+}
+
+.dark article li::marker {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* 볼드 텍스트 */
+article strong {
+  font-weight: 600;
+}
+
+/* 블록인용구 - Folio 슬레이트 블루 좌측 바 + 연한 배경.
+ *
+ * !important 사용 이유: Nextra docs 테마가 Tailwind 클래스(.nx-*)로
+ * blockquote에 자체 padding/border를 적용하는데, 그 명세도(0,1,0)가
+ * 우리 type 셀렉터(0,0,2)를 이긴다. 프레임워크 기본값을 의도적으로
+ * 덮어쓰기 위해 !important 필요. */
+article blockquote {
+  border-left: 3px solid var(--fl-accent) !important;
+  padding: 0.5em 1em !important;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  color: inherit;
+  font-style: normal;
+  background: var(--fl-tint-blue-bg);
+  border-radius: 0 6px 6px 0;
+}
+
+/* 인용 좌측 정렬:
+ *
+ * 기존에는 blockquote 안 텍스트 시작점을 본문 텍스트와 맞추기 위해
+ * border + padding만큼 박스 자체를 왼쪽으로 빼는 hanging accent 계산을 썼다.
+ * 하지만 강조 박스의 외곽선이 본문 그리드 밖으로 튀어나와 보여서,
+ * 이제는 박스 외곽을 본문 폭에 맞추고 내부 여백은 callout의 일부로 둔다.
+ *
+ * !important: Nextra의 Tailwind blockquote 스타일을 덮어쓰기 위해. */
+article main > blockquote {
+  margin-inline: auto !important;
+  max-width: 800px !important;
+  box-sizing: border-box;
+}
+
+article blockquote p {
+  font-style: normal;
+  margin-bottom: 0.4em;
+}
+
+article blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.dark article blockquote {
+  border-left-color: var(--fl-accent);
+}
+
+/* 테이블 - 노션 스타일 심플 보더 */
+article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.9375em;
+  line-height: 1.5;
+}
+
+/* Fallback for any table that bypasses the MDX Table component.
+ * Nextra's stock table class intentionally uses negative inline margins for
+ * scroll affordance, but our reading column should keep the same outer edge as
+ * paragraphs, callouts, and headings. */
+article main > table {
+  margin-inline: auto !important;
+  box-sizing: border-box;
+}
+
+article th {
+  font-weight: 600;
+  text-align: left;
+  padding: 0.5em 0.75em;
+  border: none;
+  border-bottom: 2px solid rgba(55, 53, 47, 0.12);
+  background: rgba(55, 53, 47, 0.03);
+}
+
+.dark article th {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+article td {
+  padding: 0.5em 0.75em;
+  border: none;
+  border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.dark article td {
+  border-bottom-color: rgba(255, 255, 255, 0.09);
+}
+
+/* Korean+English mixed tables — keep words intact so column 1 doesn't shrink
+ * to one-character width when column 3 has a long sentence.
+ * Nextra's stock styles set `overflow-wrap: anywhere`, which both breaks English
+ * words mid-character AND lets the browser size a column to 1ch min-content.
+ * We override with !important since the upstream rule has equal/higher specificity. */
+article th,
+article td {
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+}
+
+/* But inline code (URLs, paths, long tokens) must still be able to break,
+ * otherwise it overflows the cell. */
+article th code,
+article td code {
+  word-break: break-all !important;
+  overflow-wrap: anywhere !important;
+}
+
+/* Navbar 스타일 */
+nav[class*='nextra'] a {
+  font-weight: 500;
+}
+
+.nextra-navbar {
+  background: rgb(var(--nextra-bg)) !important;
+  border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+  isolation: isolate;
+}
+
+.nextra-navbar-blur {
+  background: rgb(var(--nextra-bg)) !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.dark .nextra-navbar {
+  border-bottom-color: rgba(255, 255, 255, 0.09);
+}
+
+/* 사이드바 스타일 */
+aside a {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* 페이지 컨테이너 최대 너비 */
+:root {
+  --nextra-content-width: 85rem;
+}
+
+/* ===== 사이드바 footer 재배치 ===== */
+
+.nextra-sidebar:not([class*="hidden"]) {
+  display: flex;
+  flex-direction: column;
+}
+
+.nextra-sidebar-footer {
+  order: -1;
+  position: sticky;
+  top: 0;
+  bottom: auto !important;
+  border-top: none !important;
+  border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+  z-index: 1;
+  background: rgb(var(--nextra-bg));
+}
+
+.dark .nextra-sidebar-footer {
+  border-bottom-color: rgba(255, 255, 255, 0.09);
+}
+
+.nextra-sidebar-footer > :not(button[aria-expanded]) {
+  display: none !important;
+}
+
+.nextra-sidebar-footer > button[aria-expanded] {
+  display: flex !important;
+}
+
+.theme-switch-navbar {
+  margin-left: 0.25rem;
+}
+
+/* Notion-style image */
+article img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.25em auto 1.25em;
+  border-radius: 3px;
+  border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.dark article img {
+  border-color: rgba(255, 255, 255, 0.09);
+}
+
+/* Notion-style figure & figcaption */
+article figure {
+  margin: 0.5em 0 1.25em;
+  text-align: center;
+}
+
+article figure img {
+  margin: 0 auto 0.5em;
+}
+
+article figcaption {
+  font-size: 0.8125em;
+  color: rgba(55, 53, 47, 0.5);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.dark article figcaption {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Notion-style code block margin */
+article pre {
+  margin: 0.5em 0 1.25em;
+  border-radius: 4px;
+}
+
+/* 사이드바 활성 항목 */
+.nextra-sidebar li a[aria-current="page"] {
+  font-weight: 500;
+  background-color: rgba(55, 53, 47, 0.06);
+  border-radius: 4px;
+}
+
+.dark .nextra-sidebar li a[aria-current="page"] {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ===== Mermaid 다이어그램 모바일 가독성 =====
+ * Mermaid는 SVG에 inline `max-width: <원본폭>px`을 박아 넣고
+ * 부모 폭에 맞춰 비례 축소된다. 좁은 화면에서 텍스트가 너무 작아지므로
+ * 모바일에서는 SVG 본래 크기를 유지하고 부모에 가로 스크롤을 허용한다. */
+@media (max-width: 768px) {
+  article main > div:has(> svg.flowchart) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    /* 가로 스크롤 영역을 article padding 끝까지 넓혀준다. */
+    margin-inline: -1rem;
+    padding-inline: 1rem;
+  }
+
+  article main > div > svg.flowchart {
+    min-width: 560px;
+    max-width: none !important;
+  }
+}

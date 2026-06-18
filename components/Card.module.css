@@ -1,0 +1,273 @@
+/* Notion-style Card */
+.link {
+  text-decoration: none !important;
+  color: inherit;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(15, 14, 12, 0.08);
+  /* Folio --fl-surface-2: 따뜻한 오프화이트로 흰 페이지에서 분리 */
+  background: #f7f6f3;
+  /* 부드러운 ease-out + 약간 긴 duration — "들리는" 느낌의 핵심.
+   * box-shadow/transform/border-color는 cubic-bezier로 자연스럽게. */
+  transition:
+    background 0.18s ease-out,
+    border-color 0.18s ease-out,
+    box-shadow 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Hover: "밝아지지 않는다" 원칙
+ * - 배경은 약간 더 진하게 (사라지는 느낌 X)
+ * - 테두리는 같은 색 hue 안에서 살짝 진하게 (강한 액센트 X)
+ * - 카드가 1px 들썩 + shadow 깊어짐 → "들 수 있다"는 어포던스
+ * - 액센트 컬러는 화살표에만 집중 → 시선을 "다음 행동"으로 유도 */
+.link:hover .card,
+.card:hover {
+  background: #f3f1ec;
+  border-color: rgba(15, 14, 12, 0.16);
+  transform: translateY(-1px);
+  box-shadow:
+    0 2px 4px rgba(15, 14, 12, 0.04),
+    0 6px 16px rgba(15, 14, 12, 0.06);
+}
+
+.link:active .card,
+.card:active {
+  transform: translateY(0);
+  box-shadow:
+    0 1px 2px rgba(15, 14, 12, 0.05),
+    0 2px 6px rgba(15, 14, 12, 0.04);
+  transition-duration: 0.08s;
+}
+
+/* 접근성: prefers-reduced-motion 사용자는 transform 비활성 */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .link:hover .card,
+  .card:hover,
+  .link:active .card,
+  .card:active {
+    transform: none;
+    transition: background 0.1s ease, border-color 0.1s ease, box-shadow 0.1s ease;
+  }
+}
+
+/* 이모지 컬럼은 폭을 고정한다.
+ * 🚦 vs 📋 vs 🎯 vs 📚 는 폰트에 따라 실제 렌더 폭이 다르다.
+ * 폭을 고정하지 않으면 본문(.body)의 시작점이 카드마다 달라져
+ * "글자 폭이 달라 보이는" 시각적 비대칭이 발생한다. */
+.icon {
+  font-size: 2em;
+  flex-shrink: 0;
+  line-height: 1.2;
+  user-select: none;
+  width: 1.6em;
+  text-align: center;
+}
+
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  margin: 0 0 0.35em 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: rgb(55, 53, 47);
+}
+
+:global(.dark) .title {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.description {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: rgba(55, 53, 47, 0.82);
+  line-height: 1.6;
+}
+
+.card .description p {
+  margin: 0;
+  line-height: inherit;
+}
+
+/* Meta info (e.g. "7개 챕터 · 30+ 문서") */
+.meta {
+  display: inline-block;
+  margin-top: 0.55rem;
+  font-size: 0.8125rem;
+  color: rgba(55, 53, 47, 0.7);
+  letter-spacing: 0;
+}
+
+:global(.dark) .meta {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+/* Arrow indicator for linked cards */
+.arrow {
+  flex-shrink: 0;
+  font-size: 1.125rem;
+  color: rgba(55, 53, 47, 0.45);
+  transition: color 0.15s ease, transform 0.15s ease;
+  align-self: center;
+}
+
+/* 호버 시 액센트는 화살표 한 곳에만 — 시선을 "다음 행동"으로 유도.
+ * translateX는 4px로 확실히 보이게 + 카드 lift와 자연스럽게 결합. */
+.link:hover .arrow {
+  color: var(--fl-accent, #3d6ff2);
+  transform: translateX(4px);
+}
+
+:global(.dark) .arrow {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+:global(.dark) .link:hover .arrow {
+  color: var(--fl-accent, #8aa9ff);
+  transform: translateX(4px);
+}
+
+/* Vertical variant — 일러스트/큰 아이콘이 위, 텍스트가 아래.
+ * Anthropic 커리큘럼 베이스처럼 동급 카드 3개가 나란히 갈 때 시각 균형이 더 좋다.
+ * - 가운데 정렬: 일러스트 자체가 axis가 되므로 텍스트도 center
+ * - 아이콘은 horizontal variant(2em)보다 크게 (3.2em) — "이미지" 역할
+ * - 화살표 X: 카드 전체가 클릭 타깃임을 일러스트 lift로 표현 */
+.card.vertical {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.85rem;
+  padding: 1.75rem 1.25rem 1.5rem;
+}
+
+.card.vertical .icon {
+  font-size: 3.2em;
+  width: auto;
+  line-height: 1;
+}
+
+.card.vertical .image {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+  user-select: none;
+  /* globals.css의 `article img` 노션 스타일 보더·라운드·마진을 카드 이미지에서는 무력화.
+   * 일러스트 자체가 시각 단위라 외곽 1px 보더가 들어가면 액자처럼 가둬 보임. */
+  border: 0 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  background: transparent;
+}
+
+.card.vertical .body {
+  flex: 0 0 auto;
+}
+
+.card.vertical .title {
+  font-size: 1.125rem;
+  margin-bottom: 0.4em;
+}
+
+.card.vertical .description {
+  font-size: 0.9375rem;
+}
+
+.card.vertical .meta {
+  margin-top: 0.75rem;
+}
+
+/* vertical hover: 화살표 대신 일러스트가 살짝 위로 — "들 수 있다"는 어포던스를
+ * 콘텐츠 자체에서 표현 (액센트 컬러 사용 X, 기존 결정 토큰 유지) */
+.link:hover .card.vertical .icon,
+.link:hover .card.vertical .image {
+  transform: translateY(-2px);
+  transition: transform 0.18s ease-out;
+}
+
+/* Grid - 노션 스타일 갤러리
+ *
+ * ⚠️ minmax(0, 1fr) — 1fr로 쓰면 안 된다.
+ * CSS Grid에서 `1fr`은 실제론 `minmax(auto, 1fr)`이라
+ * 콘텐츠의 min-content가 컬럼을 밀어내면 1fr 약속이 깨진다.
+ * (예: 긴 한국어 단어, 큰 이모지 → 한쪽 컬럼만 넓어짐)
+ * minmax(0, 1fr)을 써야 어떤 콘텐츠 길이에서도 컬럼 폭이 동일하게 유지된다.
+ * 이 컴포넌트를 수정할 때 절대 `1fr`로 되돌리지 말 것. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns, 2), minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Disabled state — 예정 회차 등 비활성 카드
+ * 시각적 de-emphasis는 dashed border + transparent 배경으로 충분.
+ * opacity는 너무 낮추면 본문 가독성이 망가지므로 보존적으로. */
+.disabled {
+  opacity: 0.88;
+  cursor: default;
+  border-style: dashed;
+  background: transparent;
+}
+
+.disabled:hover {
+  background: transparent;
+  border-color: rgba(15, 14, 12, 0.08);
+  box-shadow: none;
+  transform: none;
+}
+
+:global(.dark) .disabled {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+:global(.dark) .disabled:hover {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Dark mode
+ * background와 border 모두 한 단계 진하게: 검정 배경에서 카드 경계가 묻히지 않도록.
+ * 노션 다크 톤(아주 옅은 회색 카드)을 참고. */
+:global(.dark) .card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+:global(.dark) .link:hover .card,
+:global(.dark) .card:hover {
+  /* 다크 모드도 같은 원칙: 강한 액센트 테두리 X, 같은 hue 안에서 짙어짐 */
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+:global(.dark) .description {
+  color: rgba(255, 255, 255, 0.78);
+}

@@ -1,0 +1,36 @@
+/* Markdown table shell:
+ * Nextra's default table classes use negative inline margins so wide tables can
+ * bleed to the content padding edge. In this site, flow content is centered on a
+ * fixed reading column, so the scroll responsibility lives on this wrapper
+ * instead of on the table element itself. */
+.scroller {
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
+  margin: 1em auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  display: table !important;
+  width: 100%;
+  min-width: 100%;
+  margin: 0 !important;
+  border-collapse: collapse;
+  line-height: 1.5;
+  overflow: visible !important;
+  white-space: normal !important;
+}
+
+.table :is(th, td) {
+  vertical-align: top;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .table {
+    min-width: 34rem;
+  }
+}

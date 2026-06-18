@@ -1,0 +1,59 @@
+/* Copy page 박스 옆(왼쪽)에 같은 결의 버튼 한 개. float-end 컨테이너 옆이라 자동으로 우측 상단에 정렬됨. */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 8px;
+  padding: 6px 10px;
+  border: 1px solid rgba(55, 53, 47, 0.14);
+  border-radius: 6px;
+  background: #ffffff;
+  color: rgb(55, 53, 47);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  float: right;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.button:hover {
+  background: #f3f1ec;
+  border-color: rgba(55, 53, 47, 0.22);
+}
+
+.on {
+  background: #DEE9FB;
+  border-color: #3D6FF2;
+  color: #1f47b3;
+}
+
+.on:hover {
+  background: #cfdef9;
+}
+
+.icon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.label {
+  white-space: nowrap;
+}
+
+:global(.dark) .button {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+:global(.dark) .button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+:global(.dark) .on {
+  background: rgba(106, 140, 255, 0.18);
+  border-color: #6A8CFF;
+  color: #c1d3ff;
+}

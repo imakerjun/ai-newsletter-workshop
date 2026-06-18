@@ -1,0 +1,36 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+
+# Build output
+/.next/
+/out/
+/build
+/dist
+
+# Misc
+.DS_Store
+*.log
+.env*.local
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# 본인 학습 데이터 (학습 에이전트가 읽는 원자료) — 공개 X
+.inbox/
+inbox/
+outbox/
+processed/
+
+# Playwright 캡처 (로컬 시각 검증 용)
+my-learning-agent-*.png
+.playwright-mcp/
+
+# Pagefind 검색 인덱스 (postbuild에서 자동 생성)
+/public/_pagefind/
