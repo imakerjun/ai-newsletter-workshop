@@ -2,24 +2,39 @@
 
 # 6. 이후 시도해 볼만한 것
 
-오늘 본 건 글 하나로 도는 한 바퀴였습니다. 이걸 본인 것으로 가져가는 세 가지입니다.
+오늘 본 걸 본인 것으로 만드는 길입니다. 템플릿을 포크해 네 단계면 내 학습 허브가 돕니다.
+
+<Steps>
+  <Step title="템플릿으로 내 저장소 만들기">
+    ai-newsletter-template에서 Use this template → Create a new repository. 깃 명령 없이 같은 구조가 생깁니다.
+  </Step>
+  <Step title="GitHub Pages 켜기">
+    Settings → Pages → Branch: main / (root). 잠시 후 내 주소로 열립니다.
+  </Step>
+  <Step title="Claude Cowork 연결 + 관심사 바꾸기">
+    저장소를 Cowork에 연결하고, AGENT.md의 관심사(interests)를 내 것으로, persona_context에 나를 한두 문장으로 소개합니다.
+  </Step>
+  <Step title="매일 자동 발행 + 슬랙 스케줄">
+    매일 아침 8시에 새 호를 발행·푸시하고 슬랙으로 링크를 보내도록 스케줄을 겁니다.
+  </Step>
+</Steps>
 
 <CardGrid columns={3}>
-  <Card title="본인 문서로 1회" image="/illustrations/magnifier.png">
-    오늘 시연을 본인이 최근 읽은 글 한 편에 그대로 해봅니다. 렌즈 4개 → 하이라이트 1개 → 꼭지 1개. 30분이면 됩니다.
+  <Card title="템플릿 저장소" image="/illustrations/agent.png" href="https://github.com/imakerjun/ai-newsletter-template">
+    포크해서 바로 시작하는 깨끗한 템플릿. Use this template 한 번이면 됩니다.
   </Card>
-  <Card title="주 1회 루틴" image="/illustrations/calendar.png">
-    매주 글 한 편을 골라 꼭지 하나를 만듭니다. PR을 끝낸 금요일 오후, 또는 일요일 저녁처럼 정해진 자리에 붙입니다.
+  <Card title="가득 찬 샘플" image="/illustrations/news.png" href="https://imakerjun.github.io/ai-newsletter/">
+    실제로 채워진 예시 허브. 받아보기와 깊이 읽기가 어떻게 보이는지 라이브로.
   </Card>
-  <Card title="Output편으로 잇기" image="/illustrations/mail-deliver.png" href="https://ai-learning-agent-workshop.vercel.app/" meta="지난 워크숍">
-    꼭지가 쌓이면 PKM·발송까지. 지난 Output편 워크숍에서 저장소 세팅과 매일 한 줄을 다룹니다.
+  <Card title="Output편으로 잇기" image="/illustrations/mail-deliver.png" href="https://ai-learning-agent-workshop.vercel.app/">
+    PKM과 발송까지 더 깊이. 지난 Output편 워크숍.
   </Card>
 </CardGrid>
 
 <Callout type="note">
-이번 세션의 가설은 하나였습니다. input과 process가 친숙해지면 output(뉴스레터)이 쉬워진다. 한 바퀴를 본인 글로 돌려보면 확인됩니다.
+이번 세션의 가설은 하나였습니다. input(깊이 읽기)과 process(큐레이션)가 친숙해지면 output(받아보기)이 쉬워진다. 한 바퀴를 본인 관심사로 돌려보면 확인됩니다.
 </Callout>
 
-<Card title="참고자료" image="/illustrations/books.png" href="/references" meta="동·서 학술 출처 + 오늘의 소스 글">
-오늘 인용한 이론과 글의 원 출처를 한곳에 모았습니다.
+<Card title="참고자료" image="/illustrations/books.png" href="/references" meta="동·서 학술 출처 + 템플릿 자료">
+오늘 인용한 이론과 템플릿·샘플의 원 출처를 한곳에 모았습니다.
 </Card>

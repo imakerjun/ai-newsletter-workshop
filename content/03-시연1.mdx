@@ -1,49 +1,45 @@
 <PageIcon src="/illustrations/present.png" alt="라이브 시연" />
 
-# 3. 라이브 시연 ① — 한 글을 4개 렌즈로 재방문
+# 3. 라이브 시연 ① — 어려운 문서를 5가지 렌즈로
 
-소스 글은 하나입니다. Anthropic의 "Building Effective Agents".
+깊이 읽기로 재구성할 문서 하나를 고릅니다. 오늘은 Anthropic의 "Building Effective Agents".
 
-<Reference title="Building Effective Agents · Anthropic" meta="에이전트를 어떻게 구성하는가 — 오늘의 소스 글" href="https://www.anthropic.com/engineering/building-effective-agents" />
+<Reference title="Building Effective Agents · Anthropic" meta="깊이 읽기로 재구성할 오늘의 어려운 문서" href="https://www.anthropic.com/engineering/building-effective-agents" />
 
 <Callout type="note">
-지금부터는 화면을 공유하면서 AI 도구(Claude)에 실제로 물어보는 시연입니다. 이 페이지는 따라보기용 스크립트입니다. 아래 프롬프트를 그대로 복사해 본인 글에 써도 됩니다.
+화면을 공유하면서 Claude Cowork에 실제로 시키는 시연입니다. 코딩은 필요 없습니다. 이 페이지는 따라보기용 스크립트입니다.
 </Callout>
 
-앞에서 정한 렌즈 4개를 같은 글 하나에 차례로 던집니다. 렌즈마다 프롬프트 하나와 기대 산출을 둡니다.
+## ![설명](/illustrations/explain.png) 한 줄로 시킨다
 
-## ![개발자](/illustrations/dev.png) 렌즈 1 — 개발자 관점
-
-```text
-이 글에서 우리 프론트엔드 코드베이스에 다음 스프린트에 바로 적용할 패턴 1개만 골라줘. 왜 그 1개인지 2줄로.
-```
-
-기대 산출: 워크플로 패턴 한 개(예: prompt chaining)와 우리 상황에 맞는 이유 2줄.
-
-## ![설명](/illustrations/explain.png) 렌즈 2 — 비개발자 · 기획 관점
+Claude Cowork에 저장소를 연결하고 링크 하나만 던집니다.
 
 ```text
-이 글의 핵심을 개발을 모르는 동료에게 한 문장으로 설명해줘. 전문용어 없이.
+이 링크를 깊이 읽기 렌즈 문서로 만들어줘 — https://www.anthropic.com/engineering/building-effective-agents
 ```
 
-기대 산출: "에이전트는 똑똑한 자동화가 아니라 …" 식의 한 문장.
+그러면 에이전트가 `learn/{슬러그}.html` 파일을 만들고, 같은 문서를 5가지 렌즈로 채웁니다. 순서는 고정입니다.
 
-## ![물음표](/illustrations/question.png) 렌즈 3 — 반론 · 회의 관점
+## ![돋보기](/illustrations/magnifier.png) 5가지 렌즈로 나오는 것
 
-```text
-이 글의 주장 중 과장됐거나 우리 환경에서 안 통할 부분을 2개 짚어줘. 근거도 같이.
-```
-
-기대 산출: "복잡한 에이전트보다 단순 워크플로가 낫다는 전제가 우리엔 안 맞을 수 있음" 같은 반론 2개.
-
-## ![회의](/illustrations/team.png) 렌즈 4 — 우리 팀 관점
-
-```text
-이 글을 우리 팀이 다음 스프린트에 실험한다면 가장 작게 시작할 한 가지는? 실험 설계를 3줄로(무엇을·어떻게·성공기준).
-```
-
-기대 산출: 한 가지 실험과 3줄짜리 설계.
+<Steps>
+  <Step title="🔤 어원">
+    agent가 왜 에이전트인지, workflow와 무엇이 다른지 말의 뿌리부터 짚습니다.
+  </Step>
+  <Step title="⚡ 한입요약">
+    복잡한 에이전트보다 단순한 워크플로가 대부분 낫다는 핵심을 5~7줄로 압축합니다.
+  </Step>
+  <Step title="🧒 비유로 쉽게">
+    에이전트와 워크플로의 차이를 일상 비유로 잡습니다. 전문용어 없이.
+  </Step>
+  <Step title="🧪 퀴즈">
+    언제 에이전트를 쓰고 언제 워크플로를 쓰는지 4~5문항으로 자가점검합니다.
+  </Step>
+  <Step title="📄 전문(번역)">
+    글 전체를 한국어로 옮기고, 영어 원문은 접이식으로 병기합니다.
+  </Step>
+</Steps>
 
 <Callout type="tip">
-렌즈 네 개를 돌리면 한 글에서 재료 네 덩이가 나옵니다. 개발 패턴 1개, 한 문장 요약, 반론 2개, 실험 1개. 이게 시연 ②의 입력입니다.
+링크 하나에서 렌즈 문서 한 편이 나옵니다. 어려운 공식문서일수록 효과가 큽니다. 이게 두꺼워진 input입니다.
 </Callout>
