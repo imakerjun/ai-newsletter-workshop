@@ -2,28 +2,46 @@
 
 # 6. 시작하기
 
-오늘 본 걸 본인 것으로 만드는 길입니다. 템플릿을 포크해 네 단계면 내 학습 허브가 돕니다.
+오늘 본 걸 본인 것으로 만드는 길입니다. 코딩 없이, 세 단계면 매일 아침 도착하는 내 뉴스레터가 완성됩니다.
 
-## ![설명](/illustrations/explain.png) 따라하기 네 단계
+## ![설명](/illustrations/explain.png) 따라하기 세 단계
 
-<Steps>
-  <Step title="템플릿으로 내 저장소 만들기">
-    ai-newsletter-template에서 Use this template → Create a new repository. 깃 명령 없이 같은 구조가 생깁니다.
-  </Step>
-  <Step title="GitHub Pages 켜기">
-    Settings → Pages → Branch: main / (root). 잠시 후 내 주소로 열립니다.
-  </Step>
-  <Step title="Claude Cowork 연결 + 관심사 바꾸기">
-    저장소를 Cowork에 연결하고, AGENT.md의 관심사(interests)를 내 것으로, persona_context에 나를 한두 문장으로 소개합니다.
-  </Step>
-  <Step title="매일 자동 발행 + 슬랙 스케줄">
-    매일 아침 8시에 새 호를 발행·푸시하고 슬랙으로 링크를 보내도록 스케줄을 겁니다.
-  </Step>
-</Steps>
+전부 Claude Cowork에게 말로 시키는 작업입니다. 단계마다 무엇을 위한 단계인지 먼저 짚었습니다.
+
+### 1단계 — Cowork에서 페이지로 먼저 확인
+
+무엇을 위한 단계인가요. 결과물부터 눈으로 봅니다. 코드 없이 템플릿을 가리켜 한 번 만들어 보고, 내가 원하던 모습이 맞는지 확인하는 겁니다.
+
+Claude Cowork에 이렇게 요청합니다.
+
+```text
+https://github.com/imakerjun/ai-newsletter-template 이 템플릿을 활용해서,
+지난 1주일간 있었던 AI 소식을 페이지로 만들어 주세요.
+```
+
+### 2단계 — Vercel로 인터넷에 올리기
+
+무엇을 위한 단계인가요. 1단계 페이지는 아직 내 작업 공간에만 있습니다. 인터넷 주소로 띄워야 어디서나 열어보고 매일 자동으로 받아볼 수 있습니다. Vercel은 그 주소를 무료로 만들어 주는 서비스입니다.
+
+1. [vercel.com](https://vercel.com)에서 계정을 만듭니다. GitHub 계정으로 바로 가입할 수 있습니다.
+2. Claude 커넥터에 Vercel을 추가합니다. Claude가 내 Vercel에 배포할 수 있게 연결하는 단계입니다.
+3. [Vercel 토큰 페이지](https://vercel.com/account/settings/tokens)에서 토큰을 만들어 Claude에 붙여넣습니다. Claude에게 주는 출입증이라고 보면 됩니다.
+4. Claude에 배포해 달라고 요청합니다. 잠시 후 내 뉴스레터 인터넷 주소가 나옵니다.
+
+### 3단계 — 매일 아침 자동 발행 (스케줄)
+
+무엇을 위한 단계인가요. 여기까지는 한 번 만든 겁니다. 스케줄을 걸어두면 손대지 않아도 매일 아침 새 소식으로 새 호가 알아서 만들어져 도착합니다. 이게 받아보기의 완성입니다.
+
+Claude 스케줄 기능으로 이렇게 겁니다.
+
+```text
+매일 아침 8시에 지난 하루 AI 소식으로 새 뉴스레터를 만들어 발행하고,
+링크를 나에게 보내줘.
+```
 
 <CardGrid columns={3}>
   <Card title="템플릿 저장소" image="/illustrations/agent.png" href="https://github.com/imakerjun/ai-newsletter-template">
-    포크해서 바로 시작하는 깨끗한 템플릿. Use this template 한 번이면 됩니다.
+    1단계에서 Cowork에게 가리킬 템플릿. 받아보기와 깊이 읽기 구조가 들어 있습니다.
   </Card>
   <Card title="가득 찬 샘플" image="/illustrations/news.png" href="https://imakerjun.github.io/ai-newsletter/">
     실제로 채워진 예시 허브. 받아보기와 깊이 읽기가 어떻게 보이는지 라이브로.
@@ -37,15 +55,12 @@
 
 한 바퀴가 익숙해지면, 내 손에 맞게 넓혀 봅니다.
 
-<CardGrid columns={2}>
-  <Card title="매일 자동 발행 걸기" image="/illustrations/calendar.png">
-    오늘 시연을 스케줄로 넘깁니다. 매일 아침 8시에 새 호가 자동으로 발행되고 슬랙으로 도착하게 해, 내 손이 안 가도 돌아가게 만듭니다.
-  </Card>
+<CardGrid columns={3}>
   <Card title="내 입맛대로 커스터마이징" image="/illustrations/gears.png">
     뉴스레터 양식과 정보 정리 방식을 바꿉니다. 카드 순서, 요약 길이, 탭 구성을 내가 읽기 편한 형태로 다듬습니다.
   </Card>
   <Card title="재방문 관점 더하기" image="/illustrations/question.png">
-    5가지 렌즈에 내 식의 관점을 더합니다. FAQ, 반론, 우리 팀 적용 같은 새 렌즈를 붙여 같은 문서를 더 여러 각도로 봅니다.
+    여러 렌즈에 내 식의 관점을 더합니다. FAQ, 반론, 우리 팀 적용 같은 새 렌즈를 붙여 같은 문서를 더 여러 각도로 봅니다.
   </Card>
   <Card title="관심사 탭 넓히기" image="/illustrations/books.png">
     뉴스레터에 내 개인 관심사를 탭으로 추가합니다. 업무 밖의 호기심까지 담으면 매일 받아보는 재미가 붙습니다.
