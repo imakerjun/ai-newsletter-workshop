@@ -1,7 +1,7 @@
 <Hero
   title="나만의 AI 학습 허브 만들기"
   subtitle="쏟아지는 AI 소식을, 나를 똑똑하게 만드는 구조로 바꾼다"
-  description="Claude Cowork로 매일 받아보는 맞춤 뉴스레터와, 어려운 문서를 5가지 렌즈로 깊이 읽는 학습 허브를 만든다."
+  description="Claude Cowork로 매일 받아보는 맞춤 뉴스레터와, 어려운 문서를 여러 렌즈로 깊이 읽는 학습 허브를 만든다."
 />
 
 ## ![정보 과부하](/illustrations/overload.png) 왜 AI 학습 허브를 만드는가
@@ -10,30 +10,38 @@
 
 이 불안을 의지로 풀지 않습니다. 서비스로 풉니다. 코딩을 몰라도 Claude Cowork에게 시키면 됩니다. 단, 학습의 원리를 적용해서. 그냥 요약 봇이 아니라, 쓸수록 나를 점점 똑똑하게 만드는 구조를 만드는 겁니다.
 
-## ![구조](/illustrations/gears.png) 두 가지 길
+## ![발표](/illustrations/present.png) 먼저, 결과부터
 
-AI를 따라잡는 길을 두 갈래로 나눠 한 곳에 둡니다. 가운데에 큐레이션이 있습니다.
+말보다 결과가 빠릅니다. 아래는 실제로 돌아가는 모습입니다. 열어보고 오세요.
 
-<CardGrid columns={3}>
-  <Card title="받아보기 (자동)" image="/illustrations/mail-deliver.png">
-    내 관심사 맞춤 AI 뉴스레터가 매일 아침 자동으로 발행됩니다. 받아보는 output입니다.
+<CardGrid columns={2}>
+  <Card title="매일 도착하는 뉴스레터" image="/illustrations/news.png" href="https://imakerjun.github.io/ai-newsletter/">
+    관심사별로 큐레이션된 AI 뉴스레터가 매일 쌓이는 가득 찬 샘플 허브.
   </Card>
-  <Card title="큐레이션" image="/illustrations/target.png">
-    24시간 소식을 선정 기준으로 추려, 핵심 하나와 더 읽을거리만 남깁니다. 가운데 process입니다.
-  </Card>
-  <Card title="깊이 읽기 (5 렌즈)" image="/illustrations/magnifier.png">
-    어려운 문서를 어원·요약·비유·퀴즈·전문번역 5가지 렌즈로 재구성합니다. 두껍게 만드는 input입니다.
+  <Card title="깊이 읽기 결과물" image="/illustrations/books.png" href="https://imakerjun.github.io/ai-newsletter/learn/prompting-fable-5.html">
+    어려운 공식문서 하나가 여러 렌즈로 풀린 실제 결과.
   </Card>
 </CardGrid>
 
-받아보기(자동)는 매일 output을 내보내고, 깊이 읽기(5 렌즈)는 어려운 문서를 input으로 바꿉니다.
+## ![구조](/illustrations/gears.png) 두 가지 길
+
+이 허브는 AI를 따라잡는 두 갈래 길을 한 곳에 둡니다. 둘 사이를 큐레이션(고르고 버리는 process)이 잇습니다.
+
+<CardGrid columns={2}>
+  <Card title="받아보기 (자동)" image="/illustrations/mail-deliver.png">
+    내 관심사 맞춤 뉴스레터가 매일 아침 자동으로 발행됩니다. 24시간 소식을 선정 기준으로 큐레이션해 핵심만 담는, 받아보는 output입니다.
+  </Card>
+  <Card title="깊이 읽기 (여러 렌즈)" image="/illustrations/magnifier.png">
+    어려운 문서를 어원·요약·비유·퀴즈·전문번역 같은 여러 렌즈로 재구성합니다. 두껍게 만드는 input입니다.
+  </Card>
+</CardGrid>
 
 ## ![과녁](/illustrations/target.png) 오늘 번개에서 할 것
 
 오늘은 Claude Cowork로 나만의 AI 학습 허브를 만드는 과정을 라이브로 봅니다. 내 관심사의 최신 소식을 매일 받아보고, 정말 중요한 문서는 여러 렌즈로 깊이 읽는 — 내 지식의 input 대시보드를 만드는 겁니다.
 
 <Callout type="tip">
-오늘의 목표: 어려운 문서 하나를 5가지 렌즈로 깊이 읽고(input), 24시간 소식을 선정 기준으로 큐레이션해(process), 맞춤 뉴스레터 한 호로 받아본다(output).
+오늘의 목표: 어려운 문서 하나를 여러 렌즈로 깊이 읽고(input), 24시간 소식을 선정 기준으로 큐레이션해(process), 맞춤 뉴스레터 한 호로 받아본다(output).
 </Callout>
 
 <Card title="1. 학습 에이전트" image="/illustrations/agent.png" href="/01-에이전트" meta="input · process · output + 동·서 이론 근거">
