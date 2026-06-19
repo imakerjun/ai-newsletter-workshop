@@ -166,6 +166,11 @@ article h2 a img {
   display: block;
 }
 
+/* TOC(On This Page)는 헤딩 텍스트만 보여준다. 헤딩 안 인라인 일러스트는 숨김. */
+.nextra-toc img {
+  display: none;
+}
+
 .dark article h2 {
   border-bottom-color: rgba(255, 255, 255, 0.09);
 }
