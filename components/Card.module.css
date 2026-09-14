@@ -7,9 +7,14 @@
   height: 100%;
 }
 
+.link .card {
+  cursor: pointer;
+}
+
 .card {
   display: flex;
   align-items: flex-start;
+  cursor: default;
   gap: 1rem;
   width: 100%;
   padding: 1.25rem 1.5rem;
@@ -34,8 +39,7 @@
  * - 테두리는 같은 색 hue 안에서 살짝 진하게 (강한 액센트 X)
  * - 카드가 1px 들썩 + shadow 깊어짐 → "들 수 있다"는 어포던스
  * - 액센트 컬러는 화살표에만 집중 → 시선을 "다음 행동"으로 유도 */
-.link:hover .card,
-.card:hover {
+.link:hover .card {
   background: #f3f1ec;
   border-color: rgba(15, 14, 12, 0.16);
   transform: translateY(-1px);
@@ -44,8 +48,7 @@
     0 6px 16px rgba(15, 14, 12, 0.06);
 }
 
-.link:active .card,
-.card:active {
+.link:active .card {
   transform: translateY(0);
   box-shadow:
     0 1px 2px rgba(15, 14, 12, 0.05),
@@ -57,9 +60,7 @@
 @media (prefers-reduced-motion: reduce) {
   .card,
   .link:hover .card,
-  .card:hover,
-  .link:active .card,
-  .card:active {
+  .link:active .card {
     transform: none;
     transition: background 0.1s ease, border-color 0.1s ease, box-shadow 0.1s ease;
   }
@@ -258,8 +259,7 @@
   border-color: rgba(255, 255, 255, 0.14);
 }
 
-:global(.dark) .link:hover .card,
-:global(.dark) .card:hover {
+:global(.dark) .link:hover .card {
   /* 다크 모드도 같은 원칙: 강한 액센트 테두리 X, 같은 hue 안에서 짙어짐 */
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.22);
