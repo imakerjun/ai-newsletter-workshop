@@ -1,6 +1,6 @@
-# AI 뉴스레터 워크숍 (Input·Process편)
+# AI 학습 허브 만들기 워크숍 (Input·Process편)
 
-우아한형제들 사내 번개(비개발자 대상, 원데이). 코딩 없이 Claude Cowork로 나만의 AI 학습 허브를 만든다. 학습 에이전트를 input·process·output으로 보고, 깊이 읽기(input)·큐레이션(process)을 라이브로 시연한 뒤 참가자가 본인 뉴스레터를 만들어 Vercel에 올리고 스케줄을 건다. 직전 [Output편 워크숍](https://ai-learning-agent-workshop.vercel.app/)의 짝꿍.
+우아한형제들 사내 워크숍(비개발자 대상, 원데이). 코딩 없이 AI 도구에게 말로 시켜 나만의 AI 학습 허브를 만든다. 도구는 Claude·ChatGPT 등 무엇이든 되고, 진행자 시연은 Claude Cowork로 한다. 학습 에이전트를 input·process·output으로 보고, 깊이 읽기(input)·큐레이션(process)을 라이브로 시연한 뒤 참가자가 본인 뉴스레터를 만들어 Vercel에 올리고 스케줄을 건다. 직전 [Output편 워크숍](https://ai-learning-agent-workshop.vercel.app/)의 짝꿍.
 
 ## 구성
 
