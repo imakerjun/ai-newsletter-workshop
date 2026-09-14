@@ -8,6 +8,7 @@ import { Timeline, TimelineItem } from './components/Timeline'
 import { Placeholder } from './components/Placeholder'
 import { Hero } from './components/Hero'
 import { Steps, Step } from './components/Steps'
+import { Flow, FlowStep } from './components/Flow'
 import { Table } from './components/Table'
 import { Reference } from './components/Reference'
 import { Anchor } from './components/Anchor'
@@ -34,6 +35,8 @@ export function useMDXComponents(components?: Record<string, React.FC>) {
     Hero,
     Steps,
     Step,
+    Flow,
+    FlowStep,
     Reference,
     PageIcon,
     SectionSlide,

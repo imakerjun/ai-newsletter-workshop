@@ -5,10 +5,10 @@ export const metadata = {
 <Hero
   title="나만의 AI 학습 허브 만들기"
   subtitle="쏟아지는 AI 소식을, 나를 똑똑하게 만드는 구조로 바꾼다"
-  description="AI 도구에게 말로 시켜 매일 받아보는 맞춤 뉴스레터와, 어려운 문서를 여러 렌즈로 깊이 읽는 학습 허브를 만든다. 코딩은 한 줄도 안 씁니다."
+  description="AI 도구에게 말로 시켜, 매일 아침 내 관심사 뉴스레터를 받아보고 어려운 문서는 여러 방식으로 깊이 읽는 나만의 사이트를 만든다. 코딩은 한 줄도 안 씁니다."
 />
 
-## ![정보 과부하](/illustrations/overload.png) 왜 AI 학습 허브를 만드는가
+## ![정보 과부하](/illustrations/overload.png) 왜 만드는가
 
 매일 AI 소식이 쏟아집니다. 새 모델, 기능 업데이트, 논문, 블로그. 다 따라가야 할 것 같은데 못 따라갑니다. 탭은 30개 열려 있고 북마크만 쌓이고, 안 보는 만큼 불안해집니다.
 
@@ -20,12 +20,32 @@ export const metadata = {
 
 <CardGrid columns={2}>
   <Card title="매일 도착하는 뉴스레터" image="/illustrations/news.png" href="https://imakerjun.github.io/ai-newsletter/">
-    관심사별로 큐레이션된 AI 뉴스레터가 매일 쌓이는 가득 찬 샘플 허브.
+    관심사별로 골라진 AI 소식이 매일 한 호씩 쌓이는 실제 사이트.
   </Card>
   <Card title="깊이 읽기 결과물" image="/illustrations/books.png" href="https://imakerjun.github.io/ai-newsletter/learn/prompting-fable-5.html">
-    어려운 공식문서 하나가 여러 렌즈로 풀린 실제 결과.
+    어려운 공식문서 하나가 어원·요약·비유·퀴즈·번역 다섯 가지로 풀린 실제 결과.
   </Card>
 </CardGrid>
+
+## ![구조](/illustrations/gears.png) 오늘 만드는 것, 한 장으로
+
+오늘 만드는 사이트는 상자 세 개로 끝납니다. 이 그림 하나가 워크숍 전체입니다. 앞의 두 상자는 화면으로 보고, 마지막 상자를 본인 노트북에서 직접 만듭니다.
+
+<Flow>
+  <FlowStep label="넣기 · input" title="깊이 읽기" meta="2·3페이지 👀 보기">
+    정말 중요한 문서 하나를 다섯 가지 방식으로 다시 읽습니다. 많이 모으는 대신 하나를 두껍게.
+  </FlowStep>
+  <FlowStep label="고르기 · process" title="큐레이션" meta="4페이지 👀 보기">
+    하루치 소식을 다 담지 않습니다. 기준 다섯으로 점수를 매겨 핵심 하나만 남깁니다.
+  </FlowStep>
+  <FlowStep label="받기 · output" title="뉴스레터" meta="5페이지 👀 보기 · 6페이지 ✋ 같이 하기" accent>
+    골라진 소식이 매일 아침 내 인터넷 주소로 한 호씩 도착합니다.
+  </FlowStep>
+</Flow>
+
+<Callout type="tip">
+오늘의 목표 한 줄: 끝나면 본인 인터넷 주소에 내 관심사 뉴스레터 첫 호가 떠 있고, 내일 아침 두 번째 호가 알아서 도착합니다.
+</Callout>
 
 ## ![체크](/illustrations/factcheck.png) 시작 전 준비물 3개
 
@@ -33,7 +53,7 @@ export const metadata = {
 
 <Steps>
   <Step title="AI 도구 하나 (Claude · ChatGPT · Gemini 아무거나)">
-    평소 쓰시는 걸 그대로 쓰면 됩니다. 오늘 시연은 Claude Cowork로 하지만, ChatGPT나 Gemini로도 똑같이 됩니다. 파일을 직접 만들어 주는 기능(Claude는 Cowork, ChatGPT는 코드 인터프리터·에이전트 모드)이 있으면 가장 매끄럽습니다.
+    평소 쓰시는 걸 그대로 쓰면 됩니다. 오늘 시연은 Claude Cowork로 하지만, ChatGPT나 Gemini로도 똑같이 됩니다. 내 컴퓨터에 파일을 직접 만들어 주는 기능이 있으면 가장 매끄럽습니다.
   </Step>
   <Step title="GitHub 계정">
     템플릿을 가져올 때와 Vercel 가입에 씁니다. 없으면 [github.com](https://github.com)에서 이메일로 1분이면 됩니다. 코드는 볼 일이 없습니다.
@@ -53,9 +73,9 @@ export const metadata = {
 
 | 페이지 | 여러분은 | 무엇을 |
 |---|---|---|
-| 1. 학습 에이전트 | 👀 보기 | 오늘 만드는 것을 세 칸(input·process·output)으로 보는 틀 |
-| 2. 깊이 읽기 | 👀 보기 | 어려운 문서 하나를 여러 렌즈로 읽는 이유 |
-| 3. 시연 ① | 👀 보기 | 공식문서 링크 하나 → 렌즈 문서가 만들어지는 과정 |
+| 1. 학습 에이전트 | 👀 보기 | 오늘 만드는 것을 넣기·고르기·받기 세 칸으로 보는 틀 |
+| 2. 깊이 읽기 | 👀 보기 | 어려운 문서 하나를 여러 방식으로 읽는 이유 |
+| 3. 시연 ① | 👀 보기 | 공식문서 링크 하나 → 다섯 가지 읽기 문서가 만들어지는 과정 |
 | 4. 큐레이션 | 👀 보기 | 다 담지 않고 핵심 하나만 남기는 기준 |
 | 5. 시연 ② | 👀 보기 | 관심사 뉴스레터 한 호가 발행되는 과정 |
 | 6. 시작하기 | ✋ 같이 하기 | 본인 뉴스레터를 만들고, 인터넷에 올리고, 매일 자동으로 걸기 |
@@ -64,40 +84,19 @@ export const metadata = {
 
 | 말 | 뜻 |
 |---|---|
-| **학습 허브** | 오늘 만드는 결과물. 뉴스레터 아카이브 + 깊이 읽기 서재가 한 사이트에 들어 있습니다. |
-| **받아보기** | 내 관심사 AI 소식이 매일 아침 뉴스레터 한 호로 자동 도착하는 것. output에 해당합니다. |
-| **깊이 읽기** | 어려운 문서 하나를 여러 렌즈로 다시 읽어 두껍게 이해하는 것. input에 해당합니다. |
+| **학습 허브** | 오늘 만드는 결과물. 뉴스레터 지난 호 목록과 깊이 읽기 문서 모음이 한 사이트에 들어 있습니다. |
+| **받아보기** | 내 관심사 AI 소식이 매일 아침 뉴스레터 한 호로 자동 도착하는 것. 세 칸 중 받기(output)입니다. |
+| **깊이 읽기** | 어려운 문서 하나를 여러 렌즈로 다시 읽어 두껍게 이해하는 것. 세 칸 중 넣기(input)입니다. |
 | **렌즈** | 같은 문서를 보는 방식 하나. 어원·한입요약·비유·퀴즈·전문번역 다섯이 기본입니다. |
-| **큐레이션** | 24시간 소식을 다 담지 않고 기준으로 골라 핵심 하나만 남기는 것. process에 해당합니다. |
+| **큐레이션** | 하루치 소식을 다 담지 않고 기준으로 골라 핵심 하나만 남기는 것. 세 칸 중 고르기(process)입니다. |
 | **Cowork · 에이전트 모드** | AI가 내 컴퓨터 폴더의 파일을 직접 만들고 고치는 모드. Claude는 Cowork, ChatGPT는 에이전트 모드가 이 역할입니다. 오늘의 모든 요청은 여기에 말로 합니다. |
 
 </Toggle>
-
-## ![구조](/illustrations/gears.png) 두 가지 길
-
-이 허브는 AI를 따라잡는 두 갈래 길을 한 곳에 둡니다. 둘 사이를 큐레이션(고르고 버리는 process)이 잇습니다.
-
-<CardGrid columns={2}>
-  <Card title="받아보기 (자동)" image="/illustrations/mail-deliver.png">
-    내 관심사 맞춤 뉴스레터가 매일 아침 자동으로 발행됩니다. 24시간 소식을 선정 기준으로 큐레이션해 핵심만 담는, 받아보는 output입니다.
-  </Card>
-  <Card title="깊이 읽기 (여러 렌즈)" image="/illustrations/magnifier.png">
-    어려운 문서를 어원·요약·비유·퀴즈·전문번역 같은 여러 렌즈로 재구성합니다. 두껍게 만드는 input입니다.
-  </Card>
-</CardGrid>
-
-## ![과녁](/illustrations/target.png) 오늘 워크숍에서 할 것
-
-오늘은 AI 도구로 나만의 AI 학습 허브를 만드는 과정을 라이브로 봅니다. 내 관심사의 최신 소식을 매일 받아보고, 정말 중요한 문서는 여러 렌즈로 깊이 읽는 내 지식의 input 대시보드를 만드는 겁니다.
-
-<Callout type="tip">
-오늘의 목표: 어려운 문서 하나를 여러 렌즈로 깊이 읽고(input), 24시간 소식을 선정 기준으로 큐레이션해(process), 맞춤 뉴스레터 한 호로 받아본다(output). 끝나면 본인 인터넷 주소에 뉴스레터 첫 호가 떠 있습니다.
-</Callout>
 
 ## ![로켓](/illustrations/rocket.png) 시작합니다
 
 왼쪽 메뉴에서 순서대로 따라오시면 됩니다. 각 페이지 맨 아래에도 다음 페이지로 가는 버튼이 있습니다.
 
-<Card title="1. 학습 에이전트 페이지로 이동 →" image="/illustrations/agent.png" href="/01-에이전트" meta="클릭하면 1번 페이지가 열립니다 · 👀 보기만">
-학습 에이전트를 세 칸으로 나눠 보고, 왜 input·process가 먼저인지 동양·서양 근거로 짚습니다.
+<Card title="1. 학습 에이전트 페이지로 이동 →" image="/illustrations/agent.png" href="/01-agent" meta="클릭하면 1번 페이지가 열립니다 · 👀 보기만">
+오늘 만드는 것을 넣기·고르기·받기 세 칸으로 나눠 봅니다. 왜 이 셋인지 짧은 근거도 함께.
 </Card>

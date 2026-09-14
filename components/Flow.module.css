@@ -1,0 +1,124 @@
+/* Flow — 가로 상자 흐름 도식
+ * Card와 같은 표면 토큰(#f7f6f3, 8px, 1px 보더)을 써서 한 벌로 보이게 한다.
+ * 화살표는 CSS ::after 로 그린다. 상자 사이 gap 안에 정확히 놓이도록 gap과 화살표 폭을 맞춘다. */
+
+.flow {
+  display: flex;
+  align-items: stretch;
+  gap: 2.25rem;
+  margin: 1.5rem 0;
+}
+
+.step {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.1rem 1.15rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(15, 14, 12, 0.08);
+  background: #f7f6f3;
+}
+
+/* 상자 사이 화살표 — gap(2.25rem) 중앙에 놓인다 */
+.step:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: -2.25rem;
+  top: 50%;
+  width: 2.25rem;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: rgba(55, 53, 47, 0.35);
+  pointer-events: none;
+}
+
+.accent {
+  border-color: color-mix(in srgb, var(--fl-accent, #3d6ff2) 45%, transparent);
+  background: var(--fl-tint-blue-bg, #dee9fb);
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--fl-accent-600, #2d5bd9);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: rgb(55, 53, 47);
+}
+
+.body {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: rgba(55, 53, 47, 0.78);
+}
+
+.body p {
+  margin: 0;
+}
+
+.meta {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-size: 0.78rem;
+  color: rgba(55, 53, 47, 0.6);
+}
+
+/* 좁은 화면: 세로 쌓기, 화살표는 아래로 */
+@media (max-width: 640px) {
+  .flow {
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .step:not(:last-child)::after {
+    content: '↓';
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: -1.75rem;
+    width: auto;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+  }
+}
+
+/* Dark mode */
+:global(.dark) .step {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+:global(.dark) .accent {
+  background: var(--fl-tint-blue-bg, rgba(138, 169, 255, 0.16));
+  border-color: color-mix(in srgb, var(--fl-accent, #6a8cff) 55%, transparent);
+}
+
+:global(.dark) .step:not(:last-child)::after {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+:global(.dark) .title {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+:global(.dark) .body {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+:global(.dark) .meta {
+  color: rgba(255, 255, 255, 0.55);
+}
