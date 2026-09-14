@@ -1,12 +1,10 @@
 export default {
   index: {
-    title: '홈',
-    display: 'hidden',
+    title: '홈 · 오늘의 흐름',
     theme: {
       sidebar: false,
       toc: false,
       breadcrumb: false,
-      pagination: false,
       timestamp: false,
       typesetting: 'article',
     },

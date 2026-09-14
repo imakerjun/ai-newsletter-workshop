@@ -7,11 +7,11 @@ import './globals.css'
 
 export const metadata = {
   title: {
-    default: '뉴스레터 만들기 번개 · Input·Process편',
-    template: '%s | 뉴스레터 만들기 번개',
+    default: 'AI 학습 허브 만들기 워크숍',
+    template: '%s | AI 학습 허브 만들기 워크숍',
   },
   description:
-    '코딩 없이 Claude Cowork로 나만의 AI 학습 허브를 만든다. 어려운 문서를 여러 렌즈로 깊이 읽고(input), 24시간 소식을 큐레이션해(process), 관심사 맞춤 뉴스레터로 매일 받아본다(output). 우아한형제들 사내 번개.',
+    '코딩 없이 AI 도구로 나만의 AI 학습 허브를 만든다. 어려운 문서를 여러 렌즈로 깊이 읽고(input), 24시간 소식을 큐레이션해(process), 관심사 맞춤 뉴스레터로 매일 받아본다(output). 우아한형제들 사내 워크숍.',
 }
 
 const logo = (
@@ -35,7 +35,7 @@ const logo = (
         background: '#3D6FF2',
       }}
     />
-    뉴스레터 번개
+    AI 학습 허브 워크숍
   </span>
 )
 
@@ -60,7 +60,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             pageMap={await getPageMap()}
             docsRepositoryBase="https://github.com/imakerjun/ai-newsletter-workshop/tree/main"
             copyPageButton={false}
-            navigation={false}
             darkMode={false}
             sidebar={{
               defaultMenuCollapseLevel: 1,
@@ -69,7 +68,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             footer={
               <Footer>
                 <span style={{ fontSize: '0.8125rem', color: 'rgb(155, 155, 155)' }}>
-                  © {new Date().getFullYear()} 뉴스레터 만들기 번개 · 우아한형제들 사내
+                  © {new Date().getFullYear()} AI 학습 허브 만들기 워크숍 · 우아한형제들 사내
                 </span>
               </Footer>
             }
