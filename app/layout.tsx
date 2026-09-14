@@ -11,7 +11,7 @@ export const metadata = {
     template: '%s | 뉴스레터 만들기 번개',
   },
   description:
-    '학습 에이전트를 input·process·output으로 본다. Output편(PKM)에 이어, 이번엔 input을 잘 넣는 두 동작 — 여러 관점으로 재방문, 하나의 하이라이트 — 을 라이브로 시연한다.',
+    '코딩 없이 Claude Cowork로 나만의 AI 학습 허브를 만든다. 어려운 문서를 여러 렌즈로 깊이 읽고(input), 24시간 소식을 큐레이션해(process), 관심사 맞춤 뉴스레터로 매일 받아본다(output). 우아한형제들 사내 번개.',
 }
 
 const logo = (
