@@ -1,6 +1,6 @@
 export default {
   index: {
-    title: '홈 · 오늘의 흐름',
+    title: '홈 · 오늘 만드는 것',
     theme: {
       toc: false,
       breadcrumb: false,
@@ -8,11 +8,8 @@ export default {
       typesetting: 'article',
     },
   },
-  '01-agent': { title: '1. 학습 에이전트' },
-  '02-deep-reading': { title: '2. 깊이 읽기 (넣기)' },
-  '03-demo-1': { title: '3. 시연 ① · 깊이 읽기' },
-  '04-curation': { title: '4. 큐레이션 (고르기)' },
-  '05-demo-2': { title: '5. 시연 ② · 받아보기' },
-  '06-start': { title: '6. 시작하기' },
+  '01-first-issue': { title: '1. 첫 호를 내 메일로' },
+  '02-github-pages': { title: '2. 내 저장소에 쌓기' },
+  '03-next': { title: '3. 응용 · 신문·깊이 읽기·주간 브리핑' },
   references: { title: '참고자료' },
 }
