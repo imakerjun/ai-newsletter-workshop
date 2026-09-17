@@ -8,7 +8,7 @@
   padding: 1rem 1.1rem;
   border-radius: 3px;
   margin: 0.5em 0;
-  line-height: 1.6;
+  line-height: 1.5;
   font-size: 1rem;
   color: rgb(55, 53, 47);
 }
@@ -21,7 +21,7 @@
   font-size: 1.15em;
   flex-shrink: 0;
   /* 본문과 같은 line-height로 맞춰 첫 줄 baseline 어긋남을 줄인다. */
-  line-height: 1.6;
+  line-height: 1.5;
   user-select: none;
   width: 1.5em;
   text-align: center;
@@ -36,7 +36,7 @@
   margin: 0 0 4px;
   font-size: inherit;
   font-weight: 600;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 .content p {
@@ -138,7 +138,7 @@
   padding: 16px;
   border-radius: 4px;
   background-color: #f9f8f7;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 .goal .emoji {
@@ -165,7 +165,7 @@
 /* Nextra 문단의 leading 클래스보다 우선하여 실제 행간을 고정한다. */
 .callout.goal .content p {
   margin: 0;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 .callout.goal .content p + p {

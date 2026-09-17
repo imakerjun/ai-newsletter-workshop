@@ -7,7 +7,7 @@
   overflow: hidden;
   background: #fff;
   color: #37352f;
-  line-height: 1.6;
+  line-height: 1.5;
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
@@ -50,7 +50,7 @@
 .example p {
   margin: 0;
   font-size: 0.9375rem;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .header p {
@@ -59,7 +59,7 @@
 
 .example a {
   font-size: 0.875rem;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .lead > a {
