@@ -3,5 +3,153 @@
 # 1. 첫 호를 내 메일로
 
 <Callout type="tip" emoji="✋">
-여기부터 같이 합니다.
+여기부터 같이 합니다. Cowork를 엽니다. 15분 뒤 받은편지함에 내 뉴스레터 1호 링크가 있으면 성공입니다. 계정은 Claude 하나면 됩니다.
 </Callout>
+
+<Flow>
+  <FlowStep label="1~2" title="관심사 말하기" meta="3분">
+    Gmail 커넥터를 확인하고, 내 관심사 탭 3개를 정합니다.
+  </FlowStep>
+  <FlowStep label="3~4" title="첫 호 만들고 하나 고치기" meta="8분">
+    템플릿 형식으로 아티팩트를 받습니다. 원문 하나 열어보고 하나 바꿉니다.
+  </FlowStep>
+  <FlowStep label="5~6" title="내 메일로" meta="3분" accent>
+    공유 링크를 만들어 보냅니다. 휴대폰에서 열어봅니다.
+  </FlowStep>
+</Flow>
+
+아래 상자의 문장을 오른쪽 위 복사 버튼으로 가져와 Cowork에 붙입니다. `{중괄호}` 부분은 본인 것으로 바꾸고 기호는 지웁니다. 예: `{내 직무}` → `마케터`. AI가 되묻는 건 답만 하면 됩니다.
+
+## ![설명](/illustrations/explain.png) 1 · Gmail 커넥터 확인 (1분)
+
+Cowork 설정 → 커넥터에서 **Gmail**이 "연결됨"인지 봅니다. 안 돼 있으면 지금 연결합니다. 회사 Google 계정입니다.
+
+## ![설명](/illustrations/explain.png) 2 · 관심사 말하기 (2분)
+
+```text
+나는 {내 직무}이고, {지금 알아보거나 해결하고 싶은 일} 때문에 AI 소식을 읽으려고 해.
+관심사 탭은 이렇게 3개.
+1) AI 최신 소식 (24시간)  2) {내 직무}를 위한 AI 활용  3) {개인 관심사}
+이 관심사를 기억해 두고 다음 요청에서 그대로 써줘.
+```
+
+탭 3개가 처음엔 어색해도 됩니다. 2단계에서 다시 바꿀 수 있습니다.
+
+## ![돋보기](/illustrations/magnifier.png) 3 · 첫 호를 아티팩트로 (5분)
+
+```text
+https://github.com/imakerjun/ai-newsletter-template 의 _TEMPLATE_edition.html 형식 그대로,
+위 관심사 3개로 지난 1주일 AI 소식 뉴스레터 첫 호를 HTML 아티팩트로 만들어줘.
+탭마다 핵심 소식 1개 + 더 읽을거리 2개. 영향 범위·새로움·출처 신뢰도·실용성·관심사 적합도 기준으로 골라줘.
+각 소식에 원문 링크, 발행일, 나에게 왜 필요한지 한 줄을 붙여줘.
+확인되지 않은 내용은 넣지 말고, 소식이 부족하면 개수를 억지로 채우지 마.
+아직 어디에도 보내지 마.
+```
+
+AI가 웹을 검색하는 데 2~4분 걸립니다. 기다리는 동안 옆 사람 화면과 비교해 보세요.
+
+첫 호는 지난 1주일로 잡습니다. 어떤 날은 24시간 소식이 얇아서 억지로 채우게 됩니다. 2단계에서 매일 24시간으로 바꿉니다.
+
+<Callout type="tip" title="이렇게 보이면 성공">
+아티팩트 상단에 **내가 적은 탭 이름 3개**가 보입니다. 소식마다 원문 링크와 발행일이 붙어 있습니다.
+</Callout>
+
+## ![과녁](/illustrations/target.png) 4 · 원문 하나 열어보고 하나 고치기 (3분)
+
+소식 하나의 원문 링크를 눌러 요약이 맞는지 봅니다. 내 관심사와 안 맞는 소식이 있으면 그걸 짚어줍니다. 이렇게요.
+
+```text
+2번 탭의 두 번째 소식은 내 일과 관계가 없어.
+기업 실적 소식보다 오늘 바로 써볼 수 있는 기능 소식으로 바꿔줘.
+```
+
+AI가 고른 걸 그대로 받지 않는 것. 이게 오늘 실습의 절반입니다.
+
+<Toggle title="AI가 고른 이유는 이렇게 보입니다 (예시 · 궁금한 분만)">
+
+같은 관심사로 공식 문서 다섯 편을 비교한 예시입니다. 각 후보를 누르면 고른 이유와 뺀 이유가 펼쳐집니다. 실제 뉴스레터에서는 발행일과 새로움도 함께 봅니다.
+
+<CurationExample
+  topic="프롬프트를 개선하고 싶은 비개발자"
+  context="공식 문서 5편을 목적에 맞게 다시 비교한 예시 · 2026.09.17 확인"
+  candidates={[
+    {
+      title: 'Claude Fable 5 프롬프팅 가이드',
+      source: 'Anthropic · 홈의 깊이 읽기 결과와 같은 원문',
+      href: 'https://platform.claude.com/docs/ko/build-with-claude/prompt-engineering/prompting-claude-fable-5',
+      decision: 'lead',
+      reason: '목표와 이유를 분명히 전달하는 방법을 내 요청에 바로 적용할 수 있습니다. 이번 호에서 먼저 읽을 문서로 골랐습니다.',
+      criteria: ['출처 · 공식 가이드', '적합도 · 요청을 고치는 데 직접 연결', '실용성 · 오늘 바로 비교 가능'],
+    },
+    {
+      title: '프롬프팅 모범 사례',
+      source: 'Anthropic · 형식·맥락·예시를 전달하는 방법',
+      href: 'https://platform.claude.com/docs/ko/build-with-claude/prompt-engineering/claude-prompting-best-practices',
+      decision: 'related',
+      reason: '핵심 문서를 읽은 뒤 원하는 답변 형식이나 예시를 더할 때 참고하기 좋습니다. 범위가 넓어 보조 자료로 남겼습니다.',
+      criteria: ['출처 · 공식 가이드', '실용성 · 구체적인 요청 작성법', '역할 · 핵심 문서 보완'],
+    },
+    {
+      title: '성공 기준 정의 및 평가 구축',
+      source: 'Anthropic · 바꾼 프롬프트의 결과를 비교하는 기준',
+      href: 'https://platform.claude.com/docs/ko/test-and-evaluate/develop-tests',
+      decision: 'related',
+      reason: '프롬프트를 바꾼 뒤 답변이 실제로 나아졌는지 확인할 때 읽습니다. 내가 원하는 결과를 구체적인 기준으로 적는 부분부터 적용합니다.',
+      criteria: ['출처 · 공식 가이드', '적합도 · 수정 전후 결과 비교', '역할 · 실습 후 확인'],
+    },
+    {
+      title: 'Claude Fable 5·Mythos 5 모델 소개',
+      source: 'Anthropic · 모델 사양·가격·통합 정보',
+      href: 'https://platform.claude.com/docs/ko/models/fable-5/introducing-claude-fable-5-and-claude-mythos-5',
+      decision: 'excluded',
+      reason: '공식 자료이지만 모델을 고르거나 API에 연결할 때 필요한 정보가 중심입니다. 이번 독자의 목표인 요청 문장 개선과는 거리가 있어 제외했습니다.',
+      criteria: ['출처 · 공식 자료', '적합도 · 이번 학습 목적과 거리'],
+    },
+    {
+      title: '지연 시간 줄이기',
+      source: 'Anthropic · 응답 속도·API 매개변수·스트리밍',
+      href: 'https://platform.claude.com/docs/ko/test-and-evaluate/strengthen-guardrails/reduce-latency',
+      decision: 'excluded',
+      reason: '응답 속도를 줄일 때 유용하지만, 지금은 원하는 답을 받는 방법부터 익히는 단계입니다. 이번 호의 범위를 지키기 위해 제외했습니다.',
+      criteria: ['출처 · 공식 자료', '우선순위 · 요청 품질을 먼저'],
+    },
+  ]}
+/>
+
+</Toggle>
+
+## ![메일](/illustrations/mail-deliver.png) 5 · 공유 링크를 내 메일로 (2분)
+
+```text
+이 아티팩트의 공유 링크를 만들어서 {내 이메일}로 보내줘.
+제목은 "[나만의 AI 뉴스레터] 1호", 본문에는 링크와 탭 이름 3개만.
+```
+
+AI가 링크를 직접 못 만들면 이렇게 합니다. 아티팩트 오른쪽 위 **공유** 버튼 → 링크 복사 → Cowork에 다시 요청.
+
+```text
+이 링크를 {내 이메일}로 보내줘. 제목은 "[나만의 AI 뉴스레터] 1호".
+{복사한 링크}
+```
+
+## ![체크](/illustrations/factcheck.png) 6 · 휴대폰에서 열기 (1분)
+
+<Callout type="tip" title="이렇게 보이면 성공">
+휴대폰에서 메일을 열고 링크를 누르면 같은 뉴스레터가 열립니다. 이 링크는 동료에게 보내도 됩니다. 계정 하나로 여기까지 왔습니다.
+</Callout>
+
+<Toggle title="막혔을 때 (자주 걸리는 지점 5개)">
+
+| 상황 | 해볼 것 |
+|---|---|
+| Gmail 커넥터가 목록에 없다 | 설정 → 커넥터 → 찾아보기에서 Gmail 추가. 안 되면 진행자 화면으로 보고, 5·6번은 집에서 합니다 |
+| 소식이 거의 안 나온다 | "기간을 2주일로 넓혀줘" |
+| 아티팩트가 아니라 글로만 나온다 | "이걸 HTML 아티팩트로 다시 만들어줘" |
+| 링크를 눌러도 안 열린다 | 아티팩트 공유 설정이 "링크 있는 사람"인지 확인합니다 |
+| 탭이 3개가 아니다 | 2번 프롬프트를 다시 붙이고 "이 관심사 3개로 다시 만들어줘" |
+
+</Toggle>
+
+<Card title="2. 내 저장소에 쌓기 →" image="/illustrations/gears.png" href="/02-github-pages" meta="30분 · ✋ 같이 하기">
+방금 받은 이 한 호를 내 GitHub 저장소에 파일로 쌓고, 인터넷 주소로 봅니다. 내일부터는 자동입니다.
+</Card>
