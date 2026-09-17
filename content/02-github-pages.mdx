@@ -3,5 +3,159 @@
 # 2. 내 저장소에 쌓기
 
 <Callout type="tip" emoji="✋">
-같이 합니다.
+같이 합니다. 30분 뒤 `https://내아이디.github.io/ai-newsletter/`에 내 1호가 떠 있고, 내일 08:00에 2호가 자동으로 추가되도록 예약돼 있으면 성공입니다. 클릭이 가장 많은 단계라 천천히 갑니다. 막히면 손을 들어 주세요.
 </Callout>
+
+<Flow>
+  <FlowStep label="1~3" title="저장소 만들고 주소 켜기" meta="7분">
+    템플릿을 복사하고 Pages를 켭니다. 내 주소에 뭔가 뜨는 걸 먼저 봅니다.
+  </FlowStep>
+  <FlowStep label="4~6" title="Cowork 연결하고 1호 올리기" meta="17분">
+    GitHub 커넥터를 연결하고, 설정을 내 것으로 바꾸고, 아까 만든 1호를 저장소에 쌓습니다.
+  </FlowStep>
+  <FlowStep label="7~8" title="내일 아침 예약" meta="6분" accent>
+    매일 08:00 새 호를 만들어 푸시하도록 예약합니다.
+  </FlowStep>
+</Flow>
+
+순서에 이유가 있습니다. **저장소를 만들고 Pages를 먼저 켭니다.** Cowork를 연결하기 전에 "내 주소에 뭔가 뜬다"를 봅니다. Pages 켜기는 클릭 3번이고, 커넥터 인증은 가장 자주 막히는 곳입니다. 쉬운 성공을 앞에 두면 뒤에서 막혀도 내 사이트는 생긴 채로 끝납니다.
+
+한 호는 파일 하나(`editions/날짜.html`), 목록은 `index.html`. 파일이 쌓이는 게 곧 데이터베이스입니다.
+
+## ![설명](/illustrations/explain.png) 1 · GitHub 로그인 (1분)
+
+[github.com](https://github.com)에 로그인합니다. 계정이 없으면 지금 무료로 만듭니다.
+
+## ![설명](/illustrations/explain.png) 2 · 템플릿을 내 저장소로 복사 (3분)
+
+[템플릿 페이지](https://github.com/imakerjun/ai-newsletter-template)를 열고 오른쪽 위 **Use this template** → **Create a new repository**.
+
+1. Repository name: `ai-newsletter`
+2. **Public** 선택. 무료 계정은 Public 저장소만 Pages가 됩니다.
+3. **Create repository**
+
+<Placeholder>2번 화면 캡처: 템플릿 페이지의 Use this template 버튼과 Create a new repository 메뉴</Placeholder>
+
+<Callout type="tip" title="이렇게 보이면 성공">
+주소창이 `github.com/내아이디/ai-newsletter`이고, 파일 목록에 `AGENT.md` `index.html` `editions` `learn`이 보입니다.
+</Callout>
+
+## ![기어](/illustrations/gears.png) 3 · Pages 켜기 (3분)
+
+내 저장소에서 **Settings** 탭 → 왼쪽 메뉴 **Pages** → Build and deployment.
+
+1. Source: **Deploy from a branch**
+2. Branch: **main**, 폴더: **/ (root)**
+3. **Save**
+
+1~2분 기다리면 위쪽에 `https://내아이디.github.io/ai-newsletter/` 주소가 나타납니다. 눌러봅니다.
+
+<Placeholder>3번 화면 캡처: Settings → Pages에서 Source가 Deploy from a branch, Branch가 main / (root)인 상태로 Save 직후</Placeholder>
+
+<Callout type="tip" title="이렇게 보이면 성공">
+내 주소를 열면 템플릿 데모 화면이 보입니다. 아직 남의 예시 내용이지만, 주소가 생긴 것이 성공입니다. 이 주소는 앞으로 안 바뀝니다.
+</Callout>
+
+## ![설명](/illustrations/explain.png) 4 · Cowork에 GitHub 커넥터 연결 (5분)
+
+Cowork 설정 → 커넥터 → **GitHub** → 연결. 브라우저에 인증 화면이 뜨면 허용합니다. 저장소 접근 범위를 물으면 `ai-newsletter` 하나만 골라도 됩니다.
+
+<Placeholder>4번 화면 캡처: Cowork 커넥터 목록에서 GitHub이 "연결됨"으로 표시된 상태 (인증 코드·토큰은 가린 상태)</Placeholder>
+
+<Callout type="danger">
+인증 화면에 뜨는 코드·토큰은 비밀번호와 같습니다. 화면을 공유 중이면 잠깐 멈춥니다. 슬랙·채팅·이 사이트 어디에도 붙이지 않습니다. 실수로 노출됐다면 GitHub 설정에서 그 연결을 끊고 다시 만들면 됩니다.
+</Callout>
+
+<Callout type="warning">
+여기서 막히면 손을 들어 주세요. 안 풀리면 **오늘은 3번까지로 충분합니다.** 내 주소는 이미 생겼습니다. 4번부터는 집에서 이 페이지를 보고 이어가면 됩니다. 옆 사람이 앞서가도 상관없습니다.
+</Callout>
+
+<Callout type="tip" title="이렇게 보이면 성공">
+Cowork 커넥터 목록에 GitHub이 "연결됨"으로 보입니다.
+</Callout>
+
+## ![과녁](/illustrations/target.png) 5 · 내 것으로 바꾸기 (5분)
+
+템플릿에는 진행자의 이름과 관심사가 예시로 들어 있습니다. 파일을 직접 고치는 대신 Cowork에게 말합니다.
+
+```text
+GitHub 저장소 {내 아이디}/ai-newsletter 에서 아래를 고치고 커밋해줘.
+- AGENT.md의 owner를 "{내 이름}"으로
+- AGENT.md의 pages_url을 https://{내 아이디}.github.io/ai-newsletter 로
+- AGENT.md의 interests를 아까 정한 관심사 3개로 바꾸고 나머지 탭은 지워줘
+- index.html의 "(내 이름)"을 "{내 이름}"으로
+다른 파일은 건드리지 마.
+```
+
+`AGENT.md`는 관심사와 선정 기준이 적힌 파일입니다. 스케줄이 돌 때마다 이 파일을 읽습니다.
+
+<Callout type="tip" title="이렇게 보이면 성공">
+저장소에서 `AGENT.md`를 열면 owner가 내 이름이고, interests에 내 탭 3개만 있습니다.
+</Callout>
+
+## ![신문](/illustrations/news.png) 6 · 1호 발행 (7분)
+
+아까 1단계에서 만든 뉴스레터를 그대로 저장소에 쌓습니다. 새로 검색해도 되지만, 같은 내용이 이제 내 주소에 올라가는 걸 먼저 봅니다.
+
+```text
+아까 아티팩트로 만든 뉴스레터 내용을 그대로 써서,
+{내 아이디}/ai-newsletter 저장소에 editions/{오늘 날짜}.html 을 만들어줘.
+_TEMPLATE_edition.html을 복제해서 NEWSLETTER 데이터만 바꾸고, meta.edition은 Vol.01로.
+index.html의 ARCHIVE.editions 맨 앞에 이 호를 추가하고, demo: true 인 예시 항목은 지워줘.
+커밋하고 푸시한 뒤 내 Pages 주소를 알려줘.
+```
+
+푸시가 끝나면 1~2분 뒤 내 주소를 새로고침합니다.
+
+<Callout type="tip" title="이렇게 보이면 성공">
+데모가 사라지고 **내 1호가 목록 맨 위**에 있습니다. 누르면 아까 메일로 받은 것과 같은 뉴스레터가 열립니다. 이 주소는 휴대폰에서도, 동료에게 보내도 열립니다.
+</Callout>
+
+<Toggle title="안에서 무슨 일이 일어나나 (궁금한 분만)">
+
+파일 이름을 알 필요는 없지만, 구조가 궁금하면 이렇게 돼 있습니다.
+
+- 한 호는 `editions/{날짜}.html` 파일 하나입니다. `_TEMPLATE_edition.html`을 복제해 안의 데이터만 채웁니다.
+- 지난 호 목록은 `index.html`입니다. 그 안의 목록 맨 앞에 새 호 한 줄이 추가됩니다.
+- 관심사·선정 기준·문장 규칙은 `AGENT.md`에 적혀 있습니다. 스케줄이 돌 때마다 이 파일을 읽습니다. 함께 고친 기준도 여기 남겨 다음 호에 반영됩니다.
+- 파일을 저장소에 올리면(푸시) GitHub Pages가 1~2분 안에 같은 주소에 새 내용을 보여줍니다. 빌드도 서버도 없습니다.
+
+</Toggle>
+
+## ![캘린더](/illustrations/calendar.png) 7 · 내일 아침 예약 (4분)
+
+여기까지 첫 호를 만들었습니다. 이제 같은 기준으로 새 호를 만드는 작업을 예약합니다. Cowork의 스케줄 기능에 이렇게 등록합니다.
+
+```text
+매일 아침 8시(한국 시간)에 {내 아이디}/ai-newsletter 저장소의 AGENT.md 기준으로
+지난 24시간 소식으로 새 호를 만들어 커밋·푸시하고,
+https://{내 아이디}.github.io/ai-newsletter 주소를 {내 이메일}로 보내줘.
+과거 호는 건드리지 마. 출처 확인이나 푸시에 실패하면 발행을 멈추고 무엇이 문제인지 알려줘.
+```
+
+아직 매번 내용을 확인하고 싶다면 "푸시하지 말고 초안만 보내줘"로 바꿔도 됩니다.
+
+<Callout type="tip" title="이렇게 보이면 성공">
+Cowork 예약 목록에 "매일 08:00" 항목이 보입니다. 시험 실행을 지원하면 오늘 한 번 돌려 새 호와 메일을 확인합니다. 실제로 도는지는 내일 아침 메일로 확인합니다.
+</Callout>
+
+## ![체크](/illustrations/factcheck.png) 8 · 정리 (2분)
+
+내 주소 `https://내아이디.github.io/ai-newsletter/`를 슬랙 자기 DM에 저장합니다. 숙제는 하나입니다. **내일 아침 메일을 확인합니다.** 2호가 왔으면 성공입니다.
+
+<Toggle title="막혔을 때 (자주 걸리는 지점 6개)">
+
+| 상황 | 해볼 것 |
+|---|---|
+| Public을 못 골랐다 / Private으로 만들었다 | Settings → General 맨 아래 Change visibility → Public. 무료 계정 Pages는 Public만 됩니다 |
+| Pages 주소가 404 | 1~2분 더 기다립니다. Settings → Pages에서 Source가 main / (root)인지 다시 봅니다 |
+| 커넥터 인증 팝업이 안 뜬다 | 브라우저 팝업 차단을 해제합니다. 안 되면 오늘은 3번까지, 집에서 이어갑니다 |
+| 푸시했는데 화면이 안 바뀐다 | 시크릿 창으로 열거나 1~2분 뒤 새로고침. 저장소 `editions/` 폴더에 오늘 파일이 있는지 봅니다 |
+| AI가 다른 저장소에 썼다 | 프롬프트에 `{내 아이디}/ai-newsletter`가 정확히 들어갔는지 확인하고 다시 붙입니다 |
+| 예약 메뉴를 못 찾는다 | 진행자 화면으로 위치를 봅니다. 못 걸었으면 내 주소와 7번 프롬프트를 적어두고 집에서 합니다 |
+
+</Toggle>
+
+<Card title="3. 응용 · 신문·깊이 읽기·주간 브리핑 →" image="/illustrations/target.png" href="/03-next" meta="10분 · 👀 보기만">
+내일부터 이 저장소를 어떻게 넓힐 수 있는지 셋만 봅니다. 공식문서 깊이 읽기, 나만의 신문, 주간 브리핑.
+</Card>
