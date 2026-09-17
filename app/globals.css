@@ -95,6 +95,7 @@ article main > div[class*="toggle"],
 article main > div[class*="placeholder"],
 article main > div[class*="Card_grid"],
 article main > div[class*="Card_card"],
+article main > div[class*="Flow_flow"],
 article main > div[class*="nextra-code"],
 article main > a[class*="link"] {
   max-width: var(--doc-reading-width);
