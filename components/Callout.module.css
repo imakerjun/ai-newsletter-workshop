@@ -32,6 +32,13 @@
   min-width: 0;
 }
 
+.callout .title {
+  margin: 0 0 4px;
+  font-size: inherit;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
 .content p {
   margin: 0;
 }
@@ -125,7 +132,55 @@
   background-color: rgb(241, 241, 239);
 }
 
+/* 목표: 공개 Notion 콜아웃의 중립 배경을 사용하고 여백은 이 문서에 맞춘다. */
+.callout.goal {
+  gap: 12px;
+  padding: 16px;
+  border-radius: 4px;
+  background-color: #f9f8f7;
+  line-height: 1.55;
+}
+
+.goal .emoji {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  font-size: inherit;
+  line-height: 1;
+  color: #787774;
+}
+
+/* 장식용 PNG에는 본문 이미지의 여백과 테두리를 적용하지 않는다. */
+.goal .illustration {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+/* Nextra 문단의 leading 클래스보다 우선하여 실제 행간을 고정한다. */
+.callout.goal .content p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.callout.goal .content p + p {
+  margin-top: 0.5em;
+}
+
 /* Dark mode */
+:global(.dark) .goal {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+:global(.dark) .goal .emoji {
+  color: rgba(255, 255, 255, 0.62);
+}
+
 :global(.dark) .info {
   background-color: rgba(45, 89, 120, 0.35);
   color: rgba(255, 255, 255, 0.81);

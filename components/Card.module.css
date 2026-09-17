@@ -218,6 +218,45 @@
   margin: 1.25rem 0;
 }
 
+/* 결과물 3개는 창 전체가 아니라 실제 본문 폭을 기준으로 전환한다. */
+.examples {
+  container-type: inline-size;
+}
+
+.examples .title,
+.examples .description {
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+@container (max-width: 560px) {
+  .examples .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .examples .card.vertical {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    text-align: left;
+  }
+
+  .examples .card.vertical .image {
+    flex: 0 0 80px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .examples .card.vertical .body {
+    flex: 1;
+  }
+
+  .examples .card.vertical .meta {
+    margin-top: 0.5rem;
+  }
+}
+
 @media (max-width: 640px) {
   .grid {
     grid-template-columns: 1fr;

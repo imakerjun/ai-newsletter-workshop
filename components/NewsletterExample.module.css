@@ -1,0 +1,151 @@
+.example {
+  max-width: var(--doc-reading-width, 800px);
+  margin: 1.25rem auto;
+  scroll-margin-top: 6rem;
+  border: 1px solid rgba(55, 53, 47, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  color: #37352f;
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.header,
+.lead,
+.related,
+.footer {
+  padding: 1.5rem;
+}
+
+.header {
+  background: #f7f6f3;
+  border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.eyebrow,
+.label {
+  display: block;
+  color: #787774;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.example h3 {
+  margin: 0.5rem 0;
+  font-size: 1.375rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.example h4 {
+  margin: 0.5rem 0 0.75rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.example p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.header p {
+  color: #787774;
+}
+
+.example a {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.lead > a {
+  display: inline-block;
+  margin-top: 0.75rem;
+}
+
+.application {
+  padding: 1rem;
+  margin-top: 1.25rem;
+  background: #f9f8f7;
+  border-radius: 4px;
+}
+
+.application strong {
+  display: block;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.related {
+  padding-top: 0;
+}
+
+.related > a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+  text-decoration: none;
+}
+
+.related > a:hover strong {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.related > a span {
+  color: #787774;
+  font-size: 0.8125rem;
+}
+
+.footer {
+  padding-top: 0;
+}
+
+.example a:focus-visible {
+  outline: 2px solid var(--fl-accent, #3d6ff2);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@media (max-width: 640px) {
+  .header,
+  .lead,
+  .related,
+  .footer {
+    padding: 1rem;
+  }
+
+  .related,
+  .footer {
+    padding-top: 0;
+  }
+}
+
+:global(.dark) .example {
+  background: rgba(255, 255, 255, 0.025);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+:global(.dark) .header,
+:global(.dark) .application {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+:global(.dark) .header,
+:global(.dark) .related > a {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+:global(.dark) .eyebrow,
+:global(.dark) .label,
+:global(.dark) .header p,
+:global(.dark) .related > a span {
+  color: rgba(255, 255, 255, 0.62);
+}
