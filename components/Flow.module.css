@@ -63,8 +63,9 @@
   color: rgba(55, 53, 47, 0.78);
 }
 
-.body p {
+.step .body p {
   margin: 0;
+  line-height: inherit;
 }
 
 .meta {
