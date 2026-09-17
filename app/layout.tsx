@@ -7,11 +7,11 @@ import './globals.css'
 
 export const metadata = {
   title: {
-    default: 'AI 학습 허브 만들기 워크숍',
-    template: '%s | AI 학습 허브 만들기 워크숍',
+    default: '나만의 AI 뉴스레터 만들기 워크숍',
+    template: '%s | 나만의 AI 뉴스레터 만들기',
   },
   description:
-    '코딩 없이 AI 도구로 나만의 AI 학습 허브를 만든다. 어려운 문서를 여러 렌즈로 깊이 읽고(input), 24시간 소식을 큐레이션해(process), 관심사 맞춤 뉴스레터로 매일 받아본다(output). 우아한형제들 사내 워크숍.',
+    '코딩 없이 Claude Cowork에게 말로 시켜 오직 나만을 위한 AI 뉴스레터를 만든다. 첫 호를 아티팩트로 만들어 이메일로 받고, 내 GitHub Pages에 쌓아 매일 아침 자동으로 받는다. 우아한형제들 사내 60분 미니 실습.',
 }
 
 const logo = (
@@ -35,7 +35,7 @@ const logo = (
         background: '#3D6FF2',
       }}
     />
-    AI 학습 허브 워크숍
+    나만의 AI 뉴스레터 만들기
   </span>
 )
 
@@ -68,7 +68,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             footer={
               <Footer>
                 <span style={{ fontSize: '0.8125rem', color: 'rgb(155, 155, 155)' }}>
-                  © {new Date().getFullYear()} AI 학습 허브 만들기 워크숍 · 우아한형제들 사내
+                  © {new Date().getFullYear()} 나만의 AI 뉴스레터 만들기 워크숍 · 우아한형제들 사내
                 </span>
               </Footer>
             }
