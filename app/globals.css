@@ -60,7 +60,7 @@ html {
  * 한글 본문에서 음수 letter-spacing은 글자 두께 인식을 깎으므로 0. */
 article {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: rgb(55, 53, 47);
   font-weight: 430;
   letter-spacing: 0;
@@ -259,7 +259,7 @@ article ol {
 
 article li {
   margin-bottom: 0.25em;
-  line-height: 1.55;
+  line-height: 1.5;
 }
 
 article li::marker {
