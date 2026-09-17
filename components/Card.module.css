@@ -310,3 +310,49 @@
 :global(.dark) .description {
   color: rgba(255, 255, 255, 0.78);
 }
+
+/* Preview variant — 실제 화면 캡처가 카드 상단을 가로로 꽉 채우고, 텍스트는 아래 왼쪽 정렬.
+ * 일러스트(.image, 96px 정사각·가운데 정렬)와 달리 "이 링크를 누르면 이런 화면이 열린다"를 보여주는 용도.
+ * .card.vertical.hasPreview 로 명세도를 올려 vertical의 가운데 정렬·패딩을 덮어쓴다. */
+.card.vertical.hasPreview {
+  padding: 0;
+  gap: 0;
+  align-items: stretch;
+  text-align: left;
+  overflow: hidden;
+}
+
+.card.hasPreview .preview {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  /* globals.css `article img`의 노션식 보더·라운드·마진 무력화 — 카드 테두리가 액자 역할을 한다 */
+  border: 0 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  border-bottom: 1px solid rgba(15, 14, 12, 0.08) !important;
+  background: #fff;
+}
+
+.card.vertical.hasPreview .body {
+  flex: 1;
+  padding: 1rem 1.25rem 1.1rem;
+}
+
+.card.vertical.hasPreview .title {
+  font-size: 1.0625rem;
+}
+
+/* hover: 일러스트처럼 들썩이지 않고, 캡처만 살짝 밝아진다 */
+.link:hover .card.hasPreview .preview {
+  transform: none;
+  filter: brightness(1.02);
+  transition: filter 0.18s ease-out;
+}
+
+:global(.dark) .card.hasPreview .preview {
+  border-bottom-color: rgba(255, 255, 255, 0.14) !important;
+  background: rgba(255, 255, 255, 0.04);
+}

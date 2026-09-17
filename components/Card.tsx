@@ -5,6 +5,7 @@ interface CardProps {
   title: string
   icon?: string
   image?: string
+  preview?: string
   vertical?: boolean
   href?: string
   disabled?: boolean
@@ -12,13 +13,15 @@ interface CardProps {
   children?: ReactNode
 }
 
-export function Card({ title, icon, image, vertical, href, disabled, meta, children }: CardProps) {
-  const isVertical = vertical || Boolean(image)
-  const cardClass = `${styles.card} ${isVertical ? styles.vertical : ''} ${disabled ? styles.disabled : ''}`
+export function Card({ title, icon, image, preview, vertical, href, disabled, meta, children }: CardProps) {
+  const isVertical = vertical || Boolean(image) || Boolean(preview)
+  const cardClass = `${styles.card} ${isVertical ? styles.vertical : ''} ${preview ? styles.hasPreview : ''} ${disabled ? styles.disabled : ''}`
 
   const content = (
     <div className={cardClass}>
-      {image ? (
+      {preview ? (
+        <img src={preview} alt="" className={styles.preview} loading="lazy" />
+      ) : image ? (
         <img src={image} alt="" className={styles.image} />
       ) : (
         icon && <span className={styles.icon}>{icon}</span>

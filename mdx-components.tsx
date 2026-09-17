@@ -17,6 +17,7 @@ import { PageIcon } from './components/PageIcon'
 import { SectionSlide } from './components/SectionSlide'
 import { CurationExample } from './components/CurationExample'
 import { NewsletterExample } from './components/NewsletterExample'
+import { Screenshot } from './components/Screenshot'
 
 const docsComponents = getDocsMDXComponents()
 
@@ -44,6 +45,7 @@ export function useMDXComponents(components?: Record<string, React.FC>) {
     SectionSlide,
     CurationExample,
     NewsletterExample,
+    Screenshot,
     ...components,
   }
 }
