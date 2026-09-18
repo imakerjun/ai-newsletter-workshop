@@ -63,6 +63,28 @@ label "{관심 주제}", kind: role, focus: "{어떤 소식을 어떤 기준으�
 
 <Reference title="탭을 넓힌 예시 · 템플릿 데모 호" meta="AI 최신 소식·비개발자에 기획자·데이터·PM 직무 탭까지 5개가 들어 있는 한 호. 탭을 눌러 비교해 봅니다" href="https://imakerjun.github.io/ai-newsletter-template/editions/2026-06-18.html" />
 
+업무와 상관없는 개인 관심사도 됩니다. 지난 24~72시간 실제 뉴스로 세 가지를 미리 만들어봤습니다.
+
+<CardGrid columns={3}>
+  <Card title="✈️ 비행기 특가" href="/examples/topic-flights.html" meta="예시 보기 →" vertical>
+    에어서울 국제선 최대 99% 할인 등 지금 예약하면 좋은 항공권 특가 3가지.
+  </Card>
+  <Card title="💰 AI로 돈 버는 방법" href="/examples/topic-ai-income.html" meta="예시 보기 →" vertical>
+    Upwork 리포트 기준 AI 쓰는 프리랜서가 시간당 34% 더 버는 이유.
+  </Card>
+  <Card title="🏠 부동산 정책·청약" href="/examples/topic-housing.html" meta="예시 보기 →" vertical>
+    DSR 규제·금리 인상·청약통장 감소까지 이번 주 정책·청약 소식 4가지.
+  </Card>
+</CardGrid>
+
+```text
+AGENT.md의 interests에 탭을 하나 추가해줘.
+label "비행기 특가", kind: role, focus: "국내외 항공권 할인·프로모션 소식을 골라 예약 마감일과 할인 조건을 알려준다".
+내일 호부터 반영되게 커밋·푸시해줘.
+```
+
+다른 두 개도 `focus` 한 줄만 바꾸면 됩니다. AI로 돈 버는 방법은 "AI 활용으로 실제 수익을 낸 사례와 도구를 큐레이션한다", 부동산 정책·청약은 "대출·금리·청약 제도 변화를 골라 내 자금 계획에 미치는 영향을 알려준다"처럼요.
+
 ## ![그래프](/illustrations/chart.png) ③ 주간 브리핑
 
 저장소에 호가 쌓이면 다시 읽습니다. 매주 금요일, 지난 7일 호를 읽고 요약하는 스케줄을 하나 더 겁니다. 저장소는 안 고칩니다.
