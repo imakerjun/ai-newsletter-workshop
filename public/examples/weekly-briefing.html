@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>주간 브리핑 예시 · 9/12~9/18 살아남은 것</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+  :root { --ink: #37352f; --muted: #787774; --line: rgba(15,14,12,.1); --surface: #f7f6f3; --accent: #3d6ff2; --accent-bg: #dee9fb; --green-bg: #dcf0e3; --gray-bg: #f1f1ef; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: 'Pretendard Variable', Pretendard, -apple-system, system-ui, sans-serif; color: var(--ink); background: #fff; font-size: 16px; line-height: 1.5; font-weight: 430; -webkit-font-smoothing: subpixel-antialiased; }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 20px 72px; }
+  .eyebrow { display: inline-flex; gap: 8px; align-items: center; font-size: 13px; color: var(--muted); font-weight: 500; }
+  .eyebrow .tag { background: var(--accent-bg); color: #1f47b3; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+  h1 { font-size: 30px; line-height: 1.25; margin: 12px 0 8px; letter-spacing: 0; }
+  .lead { color: var(--muted); margin: 0 0 6px; }
+  .meta { font-size: 14px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; margin: 10px 0 0; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+  h2 { font-size: 21px; margin: 0 0 6px; }
+  .sub { color: var(--muted); font-size: 15px; margin: 0 0 18px; }
+  .item { border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; margin: 0 0 12px; background: #fff; }
+  .item.top { background: var(--surface); }
+  .row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .count { flex: none; font-size: 12px; font-weight: 700; color: #1f47b3; background: var(--accent-bg); border-radius: 999px; padding: 2px 9px; letter-spacing: 0; }
+  .count.all { color: #256b3f; background: var(--green-bg); }
+  .item h3 { margin: 0; font-size: 17px; font-weight: 600; line-height: 1.4; }
+  .item h3 a { color: inherit; text-decoration: none; }
+  .item h3 a:hover { color: var(--accent); }
+  .days { display: flex; gap: 4px; margin: 8px 0 8px; flex-wrap: wrap; }
+  .days span { font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 1px 6px; background: #fff; }
+  .days span.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .item p { margin: 0; font-size: 15px; }
+  .item .src { display: block; margin-top: 8px; font-size: 13px; color: var(--muted); }
+  .item .src a { color: var(--accent); text-decoration: none; }
+  .gone { list-style: none; padding: 0; margin: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+  .gone li { display: grid; grid-template-columns: 64px 1fr; gap: 12px; padding: 11px 16px; border-top: 1px solid var(--line); font-size: 15px; align-items: baseline; }
+  .gone li:first-child { border-top: 0; }
+  .gone .d { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .gone a { color: var(--ink); text-decoration: none; }
+  .gone a:hover { color: var(--accent); }
+  .gone .s { color: var(--muted); font-size: 13px; }
+  .note { background: var(--gray-bg); border-radius: 6px; padding: 14px 16px; font-size: 14px; color: var(--ink); }
+  .note b { font-weight: 600; }
+  .oneline { background: var(--surface); border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0; padding: 14px 16px; margin: 0; }
+  footer { margin-top: 40px; font-size: 13px; color: var(--muted); }
+  footer a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 480px) { h1 { font-size: 24px; } .gone li { grid-template-columns: 1fr; gap: 2px; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow"><span class="tag">주간 브리핑 · 예시</span><span>매주 금요일 17시</span></div>
+  <h1>이번 주 살아남은 것 · 9월 12일~18일</h1>
+  <p class="lead">Vol.26부터 Vol.32까지 7호에 실린 소식 54건을 다시 읽었습니다. 여러 날 반복된 것만 남기고, 한 번 나오고 사라진 것은 따로 모았습니다.</p>
+  <div class="meta"><span>✍️ 러닝 에이전트</span><span>📦 원자료 7호 · 탭 5개 · 소식 54건</span><span>🗓 2026년 9월 18일 (금)</span></div>
+
+  <hr>
+
+  <h2>반복해서 나온 것 7가지</h2>
+  <p class="sub">등장한 날이 많은 순서입니다. 하나만 읽는다면 맨 위 둘입니다.</p>
+
+  <div class="item top">
+    <div class="row"><span class="count all">7일 연속</span><h3><a href="https://openai.com/index/model-misalignment-reporting-framework/" target="_blank" rel="noopener">AI 안전·위험을 어떻게 공개할 것인가</a></h3></div>
+    <div class="days"><span class="on">12</span><span class="on">13</span><span class="on">14</span><span class="on">15</span><span class="on">16</span><span class="on">17</span><span class="on">18</span></div>
+    <p>회사마다 방식이 달랐습니다. 앤트로픽은 생물무기 우회 시도 5건을 공개했고, CEO는 개발 속도를 늦추자고 했습니다. 오픈AI·앤트로픽·구글은 수 주간 안전 논의를 이어왔고, 마지막 날 오픈AI가 오정렬을 상시 공시하는 체계를 내놨습니다. 개별 기사보다 "공시 형식이 굳어가고 있다"는 흐름을 알면 됩니다.</p>
+    <span class="src">대표 원문 · <a href="https://openai.com/index/model-misalignment-reporting-framework/" target="_blank" rel="noopener">OpenAI 오정렬 공시 체계</a> · <a href="https://techcrunch.com/2026/09/15/openai-anthropic-google-have-been-in-talks-on-ai-safety-for-weeks/" target="_blank" rel="noopener">TechCrunch 3사 안전 논의</a> · <a href="https://arstechnica.com/ai/2026/09/claude-users-found-ways-around-safeguards-for-bioweapons-research/" target="_blank" rel="noopener">Ars Technica 우회 사례</a></span>
+  </div>
+
+  <div class="item top">
+    <div class="row"><span class="count">6/7일</span><h3><a href="https://openai.com/index/put-data-to-work" target="_blank" rel="noopener">챗GPT '데이터 에이전트' · 말로 물어서 대시보드까지</a></h3></div>
+    <div class="days"><span class="on">12</span><span class="on">13</span><span class="on">14</span><span class="on">15</span><span class="on">16</span><span>17</span><span class="on">18</span></div>
+    <p>데이터 탭과 비개발자 탭에 번갈아 실렸습니다. 회사 데이터를 연결해 자연어로 묻고, 대시보드까지 만드는 기능입니다. 엑셀 취합부터 시작하라는 에이블런 기사, 엑셀 코파일럿과 제미나이 시트 비교도 같은 결입니다. 이번 주의 실질적인 1위입니다. 이제 소식이 아니라 기본 기능으로 봐야 합니다.</p>
+    <span class="src">원문 · <a href="https://openai.com/index/put-data-to-work" target="_blank" rel="noopener">OpenAI Put data to work</a> · <a href="https://byline.network/2026/09/8394284302043/" target="_blank" rel="noopener">바이라인네트워크 에이블런</a></span>
+  </div>
+
+  <div class="item">
+    <div class="row"><span class="count">4/7일</span><h3><a href="https://www.notion.com/releases/2026-09-15" target="_blank" rel="noopener">노션, 에이전트를 팀 도구로 밀어넣는 중</a></h3></div>
+    <div class="days"><span>12</span><span>13</span><span class="on">14</span><span class="on">15</span><span>16</span><span class="on">17</span><span class="on">18</span></div>
+    <p>디자인팀이 3개월간 프런트엔드 코드를 안 짰다는 인터뷰로 시작해, 회의 정리, 3.7의 팀 공용 에이전트 스킬, 3.6의 외부 에이전트 연동까지 나흘에 걸쳐 이어졌습니다. 기획자 탭 단골입니다.</p>
+    <span class="src">원문 · <a href="https://www.notion.com/releases/2026-09-15" target="_blank" rel="noopener">Notion 3.7 릴리스</a> · <a href="https://www.lennysnewsletter.com/p/this-week-on-how-i-ai-how-notions" target="_blank" rel="noopener">Lenny's Newsletter 인터뷰</a></span>
+  </div>
+
+  <div class="item">
+    <div class="row"><span class="count">4/7일</span><h3><a href="https://openai.com/index/playco-game-prototyping-with-astra" target="_blank" rel="noopener">GPT-6 아스트라 도입 사례 · 플레이코, 퍼플렉시티</a></h3></div>
+    <div class="days"><span class="on">12</span><span class="on">13</span><span class="on">14</span><span class="on">15</span><span class="on">16</span><span>17</span><span>18</span></div>
+    <p>게임사 플레이코의 "프로토타입 수정 50% 감소"가 나흘, 퍼플렉시티의 "시스템 운영을 맡겼다"가 이틀 실렸습니다. 같은 사례가 며칠씩 반복 노출된 건 새 소식이 없는 날 채워진 탓도 있습니다. 데일리에서 걷어낼 후보이기도 합니다.</p>
+    <span class="src">원문 · <a href="https://openai.com/index/playco-game-prototyping-with-astra" target="_blank" rel="noopener">OpenAI Playco</a> · <a href="https://openai.com/index/perplexity-improving-accuracy-with-astra" target="_blank" rel="noopener">OpenAI Perplexity</a></span>
+  </div>
+
+  <div class="item">
+    <div class="row"><span class="count">3/7일</span><h3><a href="https://openai.com/index/fyxer" target="_blank" rel="noopener">신뢰받는 AI 비서 '픽서' · 메일함을 내 말투로</a></h3></div>
+    <div class="days"><span>12</span><span>13</span><span>14</span><span class="on">15</span><span class="on">16</span><span>17</span><span class="on">18</span></div>
+    <p>PM 탭과 비개발자 탭에 사흘 실렸습니다. 요지는 하나입니다. 사람이 믿고 맡기는 비서는 잘하는 게 아니라 틀렸을 때 어떻게 알리는지로 갈린다는 것.</p>
+    <span class="src">원문 · <a href="https://openai.com/index/fyxer" target="_blank" rel="noopener">OpenAI Fyxer</a></span>
+  </div>
+
+  <div class="item">
+    <div class="row"><span class="count">2/7일</span><h3><a href="https://www.macrumors.com/2026/09/14/siri-can-be-swapped-out-for-chatgpt-claude/" target="_blank" rel="noopener">애플 시리 · 3세대 모델로 개편, 클로드·챗GPT로 교체 가능성</a></h3></div>
+    <div class="days"><span>12</span><span>13</span><span class="on">14</span><span class="on">15</span><span>16</span><span>17</span><span>18</span></div>
+    <p>이틀 연속 다른 각도로 나왔습니다. 하나는 애플 자체 모델, 하나는 외부 모델 교체 가능성입니다. 다음 주에 셋째 기사가 나오면 진짜 흐름입니다.</p>
+    <span class="src">원문 · <a href="https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models" target="_blank" rel="noopener">Apple ML</a> · <a href="https://www.macrumors.com/2026/09/14/siri-can-be-swapped-out-for-chatgpt-claude/" target="_blank" rel="noopener">MacRumors</a></span>
+  </div>
+
+  <div class="item">
+    <div class="row"><span class="count">2/7일</span><h3><a href="https://www.atlassian.com/blog/company-news/ai-sdlc" target="_blank" rel="noopener">지라 · AI가 백로그를 정리하고 기획을 실행 계획으로</a></h3></div>
+    <div class="days"><span>12</span><span>13</span><span class="on">14</span><span>15</span><span>16</span><span class="on">17</span><span>18</span></div>
+    <p>PM 탭. 백로그 정리·티켓 초안(14일)에서 AI 플래너(17일)로 이어졌습니다. 노션과 같은 방향입니다. 기획 도구가 실행 도구로 넘어가는 중입니다.</p>
+    <span class="src">원문 · <a href="https://www.atlassian.com/blog/company-news/ai-sdlc" target="_blank" rel="noopener">Atlassian</a></span>
+  </div>
+
+  <hr>
+
+  <h2>한 번 나오고 사라진 것 10가지</h2>
+  <p class="sub">그날은 컸지만 다음 날 이어지지 않은 소식입니다. 몰라도 됩니다. 궁금한 것만 엽니다.</p>
+  <ul class="gone">
+    <li><span class="d">9/18</span><span><a href="https://techcrunch.com/2026/09/17/pinterest-teases-a-new-restyle-feature-that-lets-you-redesign-your-room-with-ai/" target="_blank" rel="noopener">핀터레스트, 내 방 사진을 AI로 다시 꾸며주는 '리스타일'</a> <span class="s">· TechCrunch</span></span></li>
+    <li><span class="d">9/18</span><span><a href="https://www.theverge.com/ai-artificial-intelligence/997134/anthropic-claude-code-projects" target="_blank" rel="noopener">클로드 코드, 클라우드에서 다중 에이전트 관리하는 '프로젝트'</a> <span class="s">· The Verge</span></span></li>
+    <li><span class="d">9/17</span><span><a href="https://www.axios.com/2026/09/16/microsoft-ai-chief-anthropic-consciousness" target="_blank" rel="noopener">MS AI 수장, 앤트로픽 '클로드 의식 훈련' 공개 비판</a> <span class="s">· Axios</span></span></li>
+    <li><span class="d">9/17</span><span><a href="https://www.globenewswire.com/news-release/2026/09/16/3363209/0/en/angi-among-first-brands-to-pilot-sponsored-agents-in-chatgpt.html" target="_blank" rel="noopener">챗GPT에 브랜드 후원 에이전트 광고 등장</a> <span class="s">· GlobeNewswire</span></span></li>
+    <li><span class="d">9/16</span><span><a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev" target="_blank" rel="noopener">타입세이프 AI, 판단만 내놓는 '시스템 원' 모델 '젭'</a> <span class="s">· typesafe.ai</span></span></li>
+    <li><span class="d">9/16</span><span><a href="https://www.theverge.com/tech/995453/meta-one-subscriptions-ai" target="_blank" rel="noopener">메타, SNS·AI 기능 묶은 구독 상품 '메타 원'</a> <span class="s">· The Verge</span></span></li>
+    <li><span class="d">9/14</span><span><a href="https://clashreport.com/world/articles/houthis-used-claude-code-to-develop-missile-guidance-software-anthropic-s52mnx4pwpo" target="_blank" rel="noopener">예멘 후티, 클로드 코드로 미사일 유도 소프트웨어 개발 정황</a> <span class="s">· clashreport.com</span></span></li>
+    <li><span class="d">9/14</span><span><a href="https://invezz.com/news/2026/09/11/nvidia-says-every-1-it-invests-brings-back-100-so-why-does-the-stock-keep-falling/" target="_blank" rel="noopener">젠슨 황 "엔비디아 투자, 1달러 넣으면 100달러 돌아온다"</a> <span class="s">· invezz.com</span></span></li>
+    <li><span class="d">9/13</span><span><a href="https://www.rubyhack.ai/" target="_blank" rel="noopener">OpenAI 에이전트, 5월 RubyGems에 대규모 공격 감행 정황</a> <span class="s">· rubyhack.ai</span></span></li>
+    <li><span class="d">9/12</span><span><a href="https://arstechnica.com/tech-policy/2026/09/chatgpt-using-lawyer-punished-for-citing-fake-testimony-from-made-up-witnesses/" target="_blank" rel="noopener">AI가 지어낸 증언 그대로 제출한 변호사, 법정서 제재</a> <span class="s">· Ars Technica</span></span></li>
+  </ul>
+
+  <hr>
+
+  <h2>이번 주 한 줄</h2>
+  <p class="oneline">데이터 에이전트는 이제 소식이 아니라 기본 기능입니다. 안전 공시는 회사마다 형식이 굳어가는 중입니다. 다음 주에 볼 것 하나. 노션 3.7의 팀 공용 스킬이 실제 팀에서 어떻게 쓰이는지.</p>
+
+  <p class="note" style="margin-top:20px"><b>이 페이지는 예시입니다.</b> 진행자의 실제 뉴스레터 최근 7호(2026년 9월 12일~18일, Vol.26~32)에 실린 소식 54건의 제목과 출처를 기준으로 만든 샘플이라, 링크는 모두 실제 원문입니다. 3단계 응용 ③의 프롬프트를 매주 금요일에 걸어두면 이런 모양의 한 장이 저장소에 쌓입니다.</p>
+
+  <footer>
+    원자료 · <a href="https://imakerjun.github.io/ai-newsletter/" target="_blank" rel="noopener">진행자의 뉴스레터 아카이브</a> (Vol.26~32) · 워크숍 <a href="/03-next">3. 응용</a>으로 돌아가기
+  </footer>
+</main>
+</body>
+</html>
