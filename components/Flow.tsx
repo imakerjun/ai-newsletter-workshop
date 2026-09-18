@@ -2,8 +2,8 @@ import type { ReactNode } from 'react'
 import styles from './Flow.module.css'
 
 interface FlowStepProps {
-  /** 상자 위에 작게 붙는 라벨. 예: "넣기 · input" */
-  label: string
+  /** 상자 위에 작게 붙는 라벨. 예: "넣기 · input". 순서를 굳이 세지 않아도 될 땐 생략 */
+  label?: string
   /** 상자 제목. 예: "깊이 읽기" */
   title: string
   /** 상자 아래 작은 메타. 예: "2·3페이지 👀" */
@@ -32,7 +32,7 @@ export function FlowStep({ label, title, meta, accent, preview, icon, children }
     <div className={`${styles.step} ${accent ? styles.accent : ''} ${preview ? styles.hasPreview : ''}`}>
       {preview && <img src={preview} alt="" className={styles.preview} loading="lazy" />}
       {icon && <img src={icon} alt="" className={styles.icon} loading="lazy" />}
-      <span className={styles.label}>{label}</span>
+      {label && <span className={styles.label}>{label}</span>}
       <h4 className={styles.title}>{title}</h4>
       {children && <div className={styles.body}>{children}</div>}
       {meta && <span className={styles.meta}>{meta}</span>}
