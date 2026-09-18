@@ -142,20 +142,22 @@ https://github.com/imakerjun/ai-newsletter-template 의 _TEMPLATE_edition.html
 ## ![메일](/illustrations/mail-deliver.png) 3 · 공유 링크를 내 이메일로 (3분)
 
 ```text
-이 아티팩트의 공유 링크를 만들어서 {내 이메일}로 보내줘.
-제목은 "[나만의 AI 뉴스레터] 1호", 본문에는 링크와 탭 이름 3개만.
-```
-
-AI가 링크를 직접 못 만들면 이렇게 합니다. 아티팩트 오른쪽 위 **공유** 버튼 → 링크 복사 → Cowork에 다시 요청.
-
-```text
-이 링크를 {내 이메일}로 보내줘. 제목은 "[나만의 AI 뉴스레터] 1호".
-{복사한 링크}
+방금 만든 아티팩트 링크를 내 이메일로 보내줘.
+본문은 https://github.com/imakerjun/ai-newsletter-template 의 _TEMPLATE_email.html을
+가져와서 HTML 형식(text/html)으로 보내줘. 이 템플릿은
+이메일에서 깨지지 않도록 인라인 style과 table로 짜여 있으니 구조를 바꾸지 마.
+HTML 태그가 글자로 그대로 보이면 안 돼. 실제 스타일이 입혀진 화면으로 와야 해.
 ```
 
 <Callout type="tip" title="이렇게 보이면 성공">
 휴대폰에서 이메일을 열고 링크를 누르면 같은 뉴스레터가 열립니다. 이 링크는 동료에게 보내도 됩니다. 계정 하나로 여기까지 왔습니다.
 </Callout>
+
+<Screenshot
+  src="/screenshots/first-issue-email.png"
+  alt="받은편지함에 도착한 '[나만의 AI 뉴스레터] 1호' 이메일. 발신자는 본인 Gmail 계정이고 본문에 데일리 AI 뉴스레터 카드가 보인다"
+  caption="받은편지함에 이렇게 옵니다."
+/>
 
 <Toggle title="이 링크를 열면 이렇게 보입니다 (예시 화면)">
 
