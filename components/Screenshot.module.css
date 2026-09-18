@@ -48,7 +48,6 @@
 
 .label {
   position: absolute;
-  right: 30px;
   top: 0;
   transform: translateY(-50%);
   padding: 3px 9px;
@@ -62,14 +61,31 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
 }
 
+/* 마크가 이미지 오른쪽 절반에 있을 때 — 라벨은 왼쪽으로 (기존 방향) */
+.labelLeft {
+  right: 30px;
+}
+
+/* 마크가 이미지 왼쪽 절반에 있을 때 — 라벨은 오른쪽으로, 왼쪽 UI(사이드바 등)를 가리지 않는다 */
+.labelRight {
+  left: 30px;
+}
+
 @media (max-width: 640px) {
   .ring {
     width: 34px;
     height: 34px;
   }
 
-  .label {
+  .labelLeft {
     right: 24px;
+  }
+
+  .labelRight {
+    left: 24px;
+  }
+
+  .label {
     font-size: 12px;
     padding: 2px 7px;
   }
