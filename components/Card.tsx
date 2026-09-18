@@ -13,6 +13,15 @@ interface CardProps {
   children?: ReactNode
 }
 
+/**
+ * 워크숍 페이지(01-first-issue, references 등) 사이 이동은 같은 탭.
+ * 외부 사이트나 /examples/*.html 같은 정적 예시 페이지는 "결과를 보여주는" 링크라
+ * 새 탭으로 열어 워크숍 진행 흐름을 잃지 않게 한다.
+ */
+function opensInNewTab(href: string) {
+  return /^https?:\/\//.test(href) || href.startsWith('/examples/')
+}
+
 export function Card({ title, icon, image, preview, vertical, href, disabled, meta, children }: CardProps) {
   const isVertical = vertical || Boolean(image) || Boolean(preview)
   const cardClass = `${styles.card} ${isVertical ? styles.vertical : ''} ${preview ? styles.hasPreview : ''} ${disabled ? styles.disabled : ''}`
@@ -36,8 +45,14 @@ export function Card({ title, icon, image, preview, vertical, href, disabled, me
   )
 
   if (href && !disabled) {
+    const newTab = opensInNewTab(href)
     return (
-      <a href={href} className={styles.link}>
+      <a
+        href={href}
+        className={styles.link}
+        target={newTab ? '_blank' : undefined}
+        rel={newTab ? 'noreferrer' : undefined}
+      >
         {content}
       </a>
     )
