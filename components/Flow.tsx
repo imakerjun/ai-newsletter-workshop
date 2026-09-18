@@ -10,6 +10,10 @@ interface FlowStepProps {
   meta?: string
   /** 강조 상자 (예: 오늘 손을 쓰는 단계) */
   accent?: boolean
+  /** 상자 상단을 가로로 채우는 실제 화면 캡처(16:10). "이 단계가 끝나면 이런 화면"을 보여줄 때 */
+  preview?: string
+  /** 라벨 위 작은 일러스트. 화면 캡처가 없는 개념 단계용 */
+  icon?: string
   children?: ReactNode
 }
 
@@ -23,9 +27,11 @@ interface FlowProps {
  * "순서가 있는 3~4단계"를 한 장 그림으로 보여줄 때 쓴다.
  * 좁은 화면에서는 세로로 쌓이고 화살표가 아래를 향한다.
  */
-export function FlowStep({ label, title, meta, accent, children }: FlowStepProps) {
+export function FlowStep({ label, title, meta, accent, preview, icon, children }: FlowStepProps) {
   return (
-    <div className={`${styles.step} ${accent ? styles.accent : ''}`}>
+    <div className={`${styles.step} ${accent ? styles.accent : ''} ${preview ? styles.hasPreview : ''}`}>
+      {preview && <img src={preview} alt="" className={styles.preview} loading="lazy" />}
+      {icon && <img src={icon} alt="" className={styles.icon} loading="lazy" />}
       <span className={styles.label}>{label}</span>
       <h4 className={styles.title}>{title}</h4>
       {children && <div className={styles.body}>{children}</div>}

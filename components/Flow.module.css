@@ -75,6 +75,43 @@
   color: rgba(55, 53, 47, 0.6);
 }
 
+/* 상단 실제 화면 캡처 — 상자 패딩을 뚫고 좌우·위를 꽉 채운다 (Card preview와 같은 결) */
+.step.hasPreview {
+  padding-top: 0;
+  overflow: hidden;
+}
+
+.preview {
+  display: block;
+  width: calc(100% + 2.3rem);
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  /* globals.css `article img`의 노션식 보더·라운드·마진 무력화 — 상자 테두리가 액자 역할 */
+  margin: 0 -1.15rem 0.75rem !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(15, 14, 12, 0.08) !important;
+  border-radius: 0 !important;
+  background: #fff;
+}
+
+/* 라벨 위 작은 일러스트 — 헤딩 옆 일러스트(44px)와 같은 크기로 통일 */
+.icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  margin: 0 0 0.35rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent;
+}
+
+:global(.dark) .preview {
+  border-bottom-color: rgba(255, 255, 255, 0.14) !important;
+  background: rgba(255, 255, 255, 0.04);
+}
+
 /* 좁은 화면: 세로 쌓기, 화살표는 아래로 */
 @media (max-width: 640px) {
   .flow {
