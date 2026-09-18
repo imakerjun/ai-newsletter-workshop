@@ -84,8 +84,8 @@
 .preview {
   display: block;
   width: calc(100% + 2.3rem);
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+  max-height: 220px;
+  object-fit: contain;
   object-position: top;
   /* globals.css `article img`의 노션식 보더·라운드·마진 무력화 — 상자 테두리가 액자 역할 */
   margin: 0 -1.15rem 0.75rem !important;
