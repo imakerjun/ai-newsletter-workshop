@@ -61,6 +61,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             docsRepositoryBase="https://github.com/imakerjun/ai-newsletter-workshop/tree/main"
             copyPageButton={false}
             darkMode={false}
+            search={null}
             sidebar={{
               defaultMenuCollapseLevel: 1,
               toggleButton: true,
