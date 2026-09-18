@@ -15,6 +15,8 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 0.35rem;
   padding: 1.1rem 1.15rem 1rem;
   border-radius: 8px;
@@ -43,10 +45,18 @@
 }
 
 .label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  border-radius: 999px;
   font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: var(--fl-accent-600, #2d5bd9);
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #fff;
+  background: var(--fl-accent-600, #2d5bd9);
 }
 
 .title {
@@ -58,6 +68,8 @@
 }
 
 .body {
+  align-self: stretch;
+  text-align: left;
   font-size: 0.875rem;
   line-height: 1.5;
   color: rgba(55, 53, 47, 0.78);
@@ -95,13 +107,13 @@
   background: #fff;
 }
 
-/* 라벨 위 작은 일러스트 — 헤딩 옆 일러스트(44px)와 같은 크기로 통일 */
+/* 라벨 위 일러스트 — 카드 중앙에 크게 */
 .icon {
   display: block;
-  width: 44px;
-  height: 44px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
-  margin: 0 0 0.35rem !important;
+  margin: 0 auto 0.35rem !important;
   border: 0 !important;
   border-radius: 0 !important;
   background: transparent;
