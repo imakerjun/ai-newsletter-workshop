@@ -7,27 +7,27 @@
 </Callout>
 
 <Flow>
-  <FlowStep label="1" title="Gmail 커넥터 확인" meta="1분">
+  <FlowStep label="1" title="Gmail 커넥터 확인">
     Gmail 커넥터가 연결돼 있는지 확인합니다.
   </FlowStep>
-  <FlowStep label="2" title="관심사 말하고 첫 호 받기" meta="7분">
+  <FlowStep label="2" title="관심사 말하고 첫 호 받기">
     관심사 3개를 말하고, 템플릿 형식으로 첫 호 아티팩트를 받습니다.
   </FlowStep>
-  <FlowStep label="3" title="내 이메일로" meta="3분">
+  <FlowStep label="3" title="내 이메일로">
     공유 링크를 만들어 보냅니다. 휴대폰에서 열어봅니다.
   </FlowStep>
-  <FlowStep label="4" title="매일 아침 예약" meta="4분" accent>
+  <FlowStep label="4" title="매일 아침 예약" accent>
     같은 방식으로 매일 아침 새 호를 받도록 예약합니다.
   </FlowStep>
 </Flow>
 
 아래 상자의 문장을 오른쪽 위 복사 버튼으로 가져와 Cowork에 붙입니다. `{중괄호}` 부분은 본인 것으로 바꾸고 기호는 지웁니다. 예: `{내 직무}` → `마케터`. AI가 되물으면 답만 합니다.
 
-## ![이메일](/illustrations/email.png) 1 · Gmail 커넥터 확인 (1분)
+## ![이메일](/illustrations/email.png) 1 · Gmail 커넥터 확인
 
 Cowork 왼쪽 메뉴 **사용자 지정** → **커넥터** → **내 항목**에 **Gmail**이 있는지 봅니다. 없으면 **탐색** 탭에서 Gmail 카드의 **+** 버튼을 눌러 지금 연결합니다. 회사 Google 계정입니다. 화면은 홈 준비물 2번에 있습니다.
 
-## ![설명](/illustrations/explain.png) 2 · 관심사 말하고 첫 호 받기 (7분)
+## ![설명](/illustrations/explain.png) 2 · 관심사 말하고 첫 호 받기
 
 아래 문장을 그대로 복사해 Cowork에 붙이면 바로 첫 호가 나옵니다.
 
@@ -139,7 +139,7 @@ https://github.com/imakerjun/ai-newsletter-template 의 _TEMPLATE_edition.html
 
 </Toggle>
 
-## ![메일](/illustrations/mail-deliver.png) 3 · 공유 링크를 내 이메일로 (3분)
+## ![메일](/illustrations/mail-deliver.png) 3 · 공유 링크를 내 이메일로
 
 ```text
 방금 만든 아티팩트 링크를 내 이메일로 보내줘.
@@ -153,23 +153,23 @@ HTML 태그가 글자로 그대로 보이면 안 돼. 실제 스타일이 입혀
 휴대폰에서 이메일을 열고 링크를 누르면 같은 뉴스레터가 열립니다. 이 링크는 동료에게 보내도 됩니다. 계정 하나로 여기까지 왔습니다.
 </Callout>
 
+<Toggle title="받은편지함·링크를 열면 이렇게 보입니다 (예시 화면)">
+
 <Screenshot
   src="/screenshots/first-issue-email.png"
   alt="받은편지함에 도착한 '[나만의 AI 뉴스레터] 1호' 이메일. 발신자는 본인 Gmail 계정이고 본문에 데일리 AI 뉴스레터 카드가 보인다"
   caption="받은편지함에 이렇게 옵니다."
 />
 
-<Toggle title="이 링크를 열면 이렇게 보입니다 (예시 화면)">
-
 <Screenshot
   src="/screenshots/first-issue-result.png"
   alt="완성된 첫 호 뉴스레터 아티팩트 화면. 관심사 탭 3개와 오늘의 핵심 카드, 더 읽을거리 목록이 보인다"
-  caption="탭마다 핵심 소식 1개와 더 읽을거리가 정리돼 있습니다."
+  caption="링크를 누르면 탭마다 핵심 소식 1개와 더 읽을거리가 정리된 화면이 열립니다."
 />
 
 </Toggle>
 
-## ![캘린더](/illustrations/calendar.png) 4 · 매일 아침 예약 (4분)
+## ![캘린더](/illustrations/calendar.png) 4 · 매일 아침 예약
 
 방금 만든 이 채팅창에 이어서 말합니다. 새 메뉴를 찾지 않고, 아티팩트를 만들던 대화 그대로 스케줄까지 겁니다.
 
@@ -180,16 +180,6 @@ HTML 태그가 글자로 그대로 보이면 안 돼. 실제 스타일이 입혀
 제목은 "[나만의 AI 뉴스레터]"에 발행 회차를 붙여서.
 확인되지 않은 내용은 넣지 말고, 소식이 부족하면 개수를 억지로 채우지 마.
 ```
-
-Cowork가 스케줄을 걸고 나면 화면 어딘가에 "매일 08:00" 예약이 생겼다는 확인이 뜹니다. 내일 아침까지 안 기다리고 지금 바로 확인하고 싶으면 이렇게 덧붙입니다.
-
-```text
-방금 건 예약과 별개로, 지금 테스트로 한 번 실행해서 결과를 보내줘.
-```
-
-<Callout type="tip" title="이렇게 보이면 성공">
-잠시 뒤 받은편지함에 방금 것과 비슷한 새 뉴스레터 이메일이 옵니다. 그게 오면 예약이 정상 작동한다는 뜻입니다. 내일 아침 8시에도 같은 메일이 자동으로 옵니다.
-</Callout>
 
 <Toggle title="막혔을 때 (자주 걸리는 지점 5개)">
 

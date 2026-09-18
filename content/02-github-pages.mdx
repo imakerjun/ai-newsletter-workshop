@@ -7,13 +7,13 @@
 </Callout>
 
 <Flow>
-  <FlowStep label="1~3" title="저장소 만들고 주소 켜기" meta="7분">
+  <FlowStep label="1~3" title="저장소 만들고 주소 켜기">
     템플릿을 복사하고 Pages를 켭니다. 내 주소에 뭔가 뜨는 걸 먼저 봅니다.
   </FlowStep>
-  <FlowStep label="4~6" title="Cowork 연결하고 1호 올리기" meta="17분">
+  <FlowStep label="4~6" title="Cowork 연결하고 1호 올리기">
     GitHub 커넥터를 연결하고, 설정을 내 것으로 바꾸고, 아까 만든 1호를 저장소에 쌓습니다.
   </FlowStep>
-  <FlowStep label="7~8" title="내일 아침 예약" meta="6분" accent>
+  <FlowStep label="7~8" title="내일 아침 예약" accent>
     매일 08:00 새 호를 만들어 푸시하도록 예약합니다.
   </FlowStep>
 </Flow>
@@ -22,11 +22,11 @@
 
 한 호가 파일 하나(`editions/날짜.html`), 목록이 `index.html`입니다. 파일이 쌓이는 게 그냥 데이터베이스입니다.
 
-## ![개발자](/illustrations/dev.png) 1 · GitHub 로그인 (1분)
+## ![개발자](/illustrations/dev.png) 1 · GitHub 로그인
 
 [github.com](https://github.com)에 로그인합니다. 계정이 없으면 지금 무료로 만듭니다.
 
-## ![복제](/illustrations/agent.png) 2 · 템플릿을 내 저장소로 복사 (3분)
+## ![복제](/illustrations/agent.png) 2 · 템플릿을 내 저장소로 복사
 
 [템플릿 페이지](https://github.com/imakerjun/ai-newsletter-template)를 열고 오른쪽 위 **Use this template** → **Create a new repository**.
 
@@ -48,7 +48,7 @@
 주소창이 `github.com/내아이디/ai-newsletter`이고, 파일 목록에 `AGENT.md` `index.html` `editions` `learn`이 보입니다.
 </Callout>
 
-## ![기어](/illustrations/gears.png) 3 · Pages 켜기 (3분)
+## ![기어](/illustrations/gears.png) 3 · Pages 켜기
 
 내 저장소에서 **Settings** 탭 → 왼쪽 메뉴 **Pages** → Build and deployment.
 
@@ -64,7 +64,7 @@
 내 주소를 열면 템플릿 데모 화면이 보입니다. 아직 남의 예시 내용이지만, 주소가 생긴 것이 성공입니다. 이 주소는 앞으로 안 바뀝니다.
 </Callout>
 
-## ![연결](/illustrations/team.png) 4 · Cowork에 GitHub 커넥터 연결 (5분)
+## ![연결](/illustrations/team.png) 4 · Cowork에 GitHub 커넥터 연결
 
 GitHub은 Gmail처럼 인기 목록에 카드로 없습니다. GitHub 공식 원격 서버 주소를 "사용자 지정 커넥터"로 등록해야 하는데, 이 등록을 Cowork에게 말로 시킵니다. 아직 안 했다면 지금 이 문장을 붙입니다. 화면은 홈 준비물 4번에도 있습니다.
 
@@ -89,7 +89,7 @@ GitHub 공식 원격 MCP 서버(https://api.githubcopilot.com/mcp/)를
 Cowork 커넥터 목록에 GitHub이 "연결됨"으로 보입니다.
 </Callout>
 
-## ![과녁](/illustrations/target.png) 5 · 내 것으로 바꾸기 (5분)
+## ![과녁](/illustrations/target.png) 5 · 내 것으로 바꾸기
 
 템플릿에는 진행자의 이름과 관심사가 예시로 들어 있습니다. 파일을 직접 고치는 대신 Cowork에게 말합니다.
 
@@ -108,7 +108,7 @@ GitHub 저장소 {내 아이디}/ai-newsletter 에서 아래를 고치고 커밋
 저장소에서 `AGENT.md`를 열면 owner가 내 이름이고, interests에 내 탭 3개만 있습니다.
 </Callout>
 
-## ![신문](/illustrations/news.png) 6 · 1호 발행 (7분)
+## ![신문](/illustrations/news.png) 6 · 1호 발행
 
 아까 1단계에서 만든 뉴스레터를 그대로 저장소에 쌓습니다. 새로 검색해도 되지만, 같은 내용이 이제 내 주소에 올라가는 걸 먼저 봅니다.
 
@@ -137,7 +137,7 @@ index.html의 ARCHIVE.editions 맨 앞에 이 호를 추가하고, demo: true �
 
 </Toggle>
 
-## ![캘린더](/illustrations/calendar.png) 7 · 내일 아침 예약 (4분)
+## ![캘린더](/illustrations/calendar.png) 7 · 내일 아침 예약
 
 1단계에서 건 예약은 이메일로만 옵니다. 이제 같은 채팅창에서 이어서 말해, 저장소 커밋까지 하도록 예약을 바꿉니다. 새 메뉴는 찾지 않습니다.
 
@@ -146,6 +146,9 @@ index.html의 ARCHIVE.editions 맨 앞에 이 호를 추가하고, demo: true �
 {내 아이디}/ai-newsletter 저장소의 AGENT.md 기준으로 지난 24시간 소식으로 새 호를 만들어
 editions/에 커밋·푸시하고, https://{내 아이디}.github.io/ai-newsletter 주소를 {내 이메일}로 보내줘.
 과거 호는 건드리지 마. 출처 확인이나 푸시에 실패하면 발행을 멈추고 무엇이 문제인지 알려줘.
+
+이메일 본문은 저장소의 _TEMPLATE_email.html을 채워서 HTML 형식(text/html)으로 보내줘.
+태그가 글자로 그대로 보이면 안 돼.
 ```
 
 1단계를 건너뛰고 여기서 처음 예약을 건다면 "아까 건" 대신 "매일 아침 8시에"로 바꿔 그대로 붙입니다. 매번 직접 확인하고 발행하고 싶으면 "푸시하지 말고 초안만 보내줘"를 추가합니다.
@@ -160,7 +163,7 @@ editions/에 커밋·푸시하고, https://{내 아이디}.github.io/ai-newslett
 잠시 뒤 이메일이 오고, 링크를 열면 내 GitHub Pages 주소에 새 호가 올라가 있습니다. 이게 되면 예약도 정상 작동한다는 뜻입니다. 실제로 매일 도는지는 내일 아침 이메일로 다시 확인합니다.
 </Callout>
 
-## ![체크](/illustrations/factcheck.png) 8 · 정리 (2분)
+## ![체크](/illustrations/factcheck.png) 8 · 정리
 
 내 주소 `https://내아이디.github.io/ai-newsletter/`를 슬랙 자기 DM에 저장합니다. 숙제는 하나입니다. **내일 아침 이메일**을 확인합니다. 2호가 왔으면 성공입니다.
 
